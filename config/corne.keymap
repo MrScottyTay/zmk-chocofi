@@ -10,6 +10,7 @@
 
 #define MO_TOG(layer) &mo_tog layer layer // macro to apply momentary on hold, toggle on tap
 #define MO_SL(layer) &mo_sl layer layer // macro to apply momentary on hold sticky on tap
+#define TD_MO_SL(layer) &td_mo_sl layer layer layer // macro to apply momentary on hold, sticky on tap, tog on double tap
 
 #define DEFAULT 0
 #define LOWER 1
@@ -37,6 +38,14 @@
                         tapping-term-ms = <200>;
                         bindings = <&mo>, <&sl>;
                 };
+                td_mo_tog: tap_dance_mo_tog {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "td_mo_tog";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&mosl>, <&tog>;
+                };
+    };
         };
 
         keymap {
