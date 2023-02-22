@@ -58,7 +58,7 @@
         combos{
                 compatible = "zmk,combos";
                 combo_tab {
-                        timeout-ms = <40>;
+                        timeout-ms = <30>;
                         key-positions = <13 14>;
                         bindings = <&kp TAB>;
                 };
