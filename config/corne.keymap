@@ -45,7 +45,6 @@
                         tapping-term-ms = <200>;
                         bindings = <&mosl>, <&tog>;
                 };
-    };
         };
 
         keymap {
