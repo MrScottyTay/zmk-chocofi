@@ -58,7 +58,7 @@
         combos{
                 compatible = "zmk,combos";
                 combo_tab {
-                        timeout-ms = <50>;
+                        timeout-ms = <40>;
                         key-positions = <13 14>;
                         bindings = <&kp TAB>;
                 };
@@ -89,7 +89,7 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &none &kp N1       &kp N2       &kp N3          &mt RBRC LBRC &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &none
-   &none &kp TAB &bt BT_SEL 1 &mt MINUS UNDER &mt RPAR LPAR &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &none
+   &none &kp TAB &bt BT_SEL 1 &mt UNDER MINUS &mt RPAR LPAR &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &none
    &none &trans       &trans       &trans          &mt RBKT LBKT &trans         &trans   &trans   &trans &trans    &trans &none
                                    &kp LGUI        &tog LOWER        &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
