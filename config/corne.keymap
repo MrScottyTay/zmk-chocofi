@@ -10,13 +10,14 @@
 
 #define MO_TOG(layer) &mo_tog layer layer // macro to apply momentary on hold, toggle on tap
 #define MO_SL(layer) &mo_sl layer layer // macro to apply momentary on hold sticky on tap
-#define TD_MO_SL(layer) &td_mo_sl layer layer // macro to apply momentary on hold, sticky on tap, tog on double tap
+// #define TD_MO_SL(layer) &td_mo_sl layer layer // macro to apply momentary on hold, sticky on tap, tog on double tap
+#define TD_SL_TOG(layer) &td_sl_tog layer layer // macro to apply toggle on tap, toggle on double tap
 
 #define DEFAULT 0
 #define LOWER 1
-#define LOWER_TOG 2
-#define RAISE 3
-#define RAISE_TOG 4
+// #define LOWER_TOG 2
+#define RAISE 2
+// #define RAISE_TOG 4
 
 
 
@@ -38,12 +39,12 @@
                         tapping-term-ms = <200>;
                         bindings = <&mo>, <&sl>;
                 };
-                td_mo_sl: behavior_td_mo_sl {
+                td_sl_tog: behavior_td_sl_tog {
                         compatible = "zmk,behavior-tap-dance";
-                        label = "td_mo_sl";
+                        label = "td_sl_tog";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&mo_sl>, <&tog>;
+                        bindings = <&sl>, <&tog>;
                 };
         };
 
@@ -60,7 +61,7 @@
    &none  &kp Q &kp W    &kp F    &kp P        &kp B           &kp J   &kp L        &kp U     &kp Y   &kp SEMI    &none
    &none  &kp A &kp R    &kp S    &kp T        &kp G           &kp M   &kp N        &kp E     &kp I   &kp O       &none
    &none  &kp Z &kp X    &kp C    &kp D        &kp V           &kp K   &kp H        &kp COMMA &kp DOT &kp FSLH    &none
-                         &kp LGUI TD_MO_SL(LOWER) &kp SPACE       &kp RET TD_MO_SL(RAISE) &kp RALT
+                         &kp LGUI TD_SL_TOG(LOWER) &kp SPACE       &kp RET TD_SL_TOG(RAISE) &kp RALT
                         >;
                 };
 
@@ -74,18 +75,18 @@
    &none &kp N1       &kp N2       &kp N3          &mt RBRC LBRC &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &none
    &none &kp TAB &bt BT_SEL 1 &mt MINUS UNDER &mt RPAR LPAR &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &none
    &none &trans       &trans       &trans          &mt RBKT LBKT &trans         &trans   &trans   &trans &trans    &trans &none
-                                   &kp LGUI        &to LOWER_TOG        &kp SPACE      &kp RET  &trans   &kp RALT
+                                   &kp LGUI        &tog LOWER        &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
 
-                lower_toggle_layer {
-                        bindings = <
-   &none &trans &trans &trans &trans      &trans     &trans &trans &trans &trans &trans &none
-   &none &trans &trans &trans &trans      &trans     &trans &trans &trans &trans &trans &none
-   &none &trans &trans &trans &trans      &trans     &trans &trans &trans &trans &trans &none
-                       &trans &to DEFAULT &trans     &trans &trans &trans
-                        >;
-                };
+//                 lower_toggle_layer {
+//                         bindings = <
+//    &none &trans &trans &trans &trans      &trans     &trans &trans &trans &trans &trans &none
+//    &none &trans &trans &trans &trans      &trans     &trans &trans &trans &trans &trans &none
+//    &none &trans &trans &trans &trans      &trans     &trans &trans &trans &trans &trans &none
+//                        &trans &to DEFAULT &trans     &trans &trans &trans
+//                         >;
+//                 };
 
                 raise_layer {
 // -------------------------------------------------------------------------------
