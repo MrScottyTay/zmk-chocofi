@@ -42,7 +42,7 @@
                 td_sl_tog: behavior_td_sl_tog {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_sl_tog";
-                        #binding-cells = <0>;
+                        #binding-cells = <2>;
                         tapping-term-ms = <200>;
                         bindings = <&sl>, <&tog>;
                 };
