@@ -62,6 +62,26 @@
                         key-positions = <13 14>;
                         bindings = <&kp TAB>;
                 };
+                combo_esc {
+                        timeout-ms = <30>;
+                        key-positions = <1 2>;
+                        bindings = <&kp ESC>;
+                };
+                combo_lctrl {
+                        timeout-ms = <30>;
+                        key-positions = <24 25>;
+                        bindings = <&sk LCTRL>;
+                };
+                combo_lgui {
+                        timeout-ms = <30>;
+                        key-positions = <25 26>;
+                        bindings = <&sk LGUI>;
+                };
+                combo_lalt {
+                        timeout-ms = <30>;
+                        key-positions = <26 27>;
+                        bindings = <&sk LALT>;
+                };
         };
 
         keymap {
@@ -74,9 +94,9 @@
 // | ---- |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | ---- |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-   &none  &kp Q &kp W    &kp F    &kp P        &kp B           &kp J   &kp L        &kp U     &kp Y   &kp SEMI    &none
-   &none  &kp A &kp R    &kp S    &kp T        &kp G           &kp M   &kp N        &kp E     &kp I   &kp O       &none
-   &none  &kp Z &kp X    &kp C    &kp D        &kp V           &kp K   &kp H        &kp COMMA &kp DOT &kp FSLH    &none
+   &none  &kp Q &kp W    &kp F    &kp P        &kp B           &kp J   &kp L        &kp U     &kp Y   &kp SEMI    &none // 11
+   &none  &kp A &kp R    &kp S    &kp T        &kp G           &kp M   &kp N        &kp E     &kp I   &kp O       &none // 23
+   &none  &kp Z &kp X    &kp C    &kp D        &kp V           &kp K   &kp H        &kp COMMA &kp DOT &kp FSLH    &none // 35
                          &kp LGUI &td_lower &kp SPACE       &kp RET &mo RAISE &kp RALT
                         >;
                 };
