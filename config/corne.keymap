@@ -39,12 +39,12 @@
                         tapping-term-ms = <200>;
                         bindings = <&mo>, <&sl>;
                 };
-                td_sl_tog: behavior_td_sl_tog {
+                td_lower: behavior_td_sl_tog {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_sl_tog";
-                        #binding-cells = <2>;
+                        #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&sl>, <&tog>;
+                        bindings = <&mo_sl LOWER>, <&tog LOWER>;
                 };
         };
 
@@ -61,7 +61,7 @@
    &none  &kp Q &kp W    &kp F    &kp P        &kp B           &kp J   &kp L        &kp U     &kp Y   &kp SEMI    &none
    &none  &kp A &kp R    &kp S    &kp T        &kp G           &kp M   &kp N        &kp E     &kp I   &kp O       &none
    &none  &kp Z &kp X    &kp C    &kp D        &kp V           &kp K   &kp H        &kp COMMA &kp DOT &kp FSLH    &none
-                         &kp LGUI TD_SL_TOG(LOWER) &kp SPACE       &kp RET TD_SL_TOG(RAISE) &kp RALT
+                         &kp LGUI &td_lower &kp SPACE       &kp RET &mo RAISE &kp RALT
                         >;
                 };
 
