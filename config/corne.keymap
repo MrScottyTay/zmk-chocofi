@@ -43,7 +43,7 @@
                         label = "td_mo_tog";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&mosl>, <&tog>;
+                        bindings = <&mo_sl>, <&tog>;
                 };
         };
 
