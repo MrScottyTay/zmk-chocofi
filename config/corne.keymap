@@ -69,17 +69,17 @@
                 };
                 combo_lctrl {
                         timeout-ms = <30>;
-                        key-positions = <24 25>;
+                        key-positions = <25 26>;
                         bindings = <&sk LCTRL>;
                 };
                 combo_lgui {
                         timeout-ms = <30>;
-                        key-positions = <25 26>;
+                        key-positions = <26 27>;
                         bindings = <&sk LGUI>;
                 };
                 combo_lalt {
                         timeout-ms = <30>;
-                        key-positions = <26 27>;
+                        key-positions = <28 29>;
                         bindings = <&sk LALT>;
                 };
         };
