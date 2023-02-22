@@ -39,12 +39,28 @@
                         tapping-term-ms = <200>;
                         bindings = <&mo>, <&sl>;
                 };
-                td_lower: behavior_td_sl_tog {
+                td_lower: behavior_td_lower {
                         compatible = "zmk,behavior-tap-dance";
-                        label = "td_sl_tog";
+                        label = "td_lower";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
                         bindings = <&mo_sl LOWER LOWER>, <&tog LOWER>;
+                };
+                td_raise: behavior_td_raise {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "td_lower";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&mo_sl RAISE RAISE>, <&tog RAISE>;
+                };
+        };
+
+        combos{
+                compatible = "zmk,combos";
+                combo_tab {
+                        timeout-ms = <50>;
+                        key-positions = <13 14>;
+                        bindings = <&kp TAB>;
                 };
         };
 
