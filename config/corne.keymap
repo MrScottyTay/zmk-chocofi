@@ -44,7 +44,7 @@
                         label = "td_sl_tog";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&mo_sl LOWER>, <&tog LOWER>;
+                        bindings = <&mo_sl LOWER LOWER>, <&tog LOWER>;
                 };
         };
 
