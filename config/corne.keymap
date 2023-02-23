@@ -266,7 +266,7 @@ bindings = <
    &none &kp F1 &kp F2  &kp F3  &kp F4  &none                      &kp C_VOL_UP &kp HOME     &kp UP   &kp END       &kp PG_UP &none
    &none &kp F5 &kp F6  &kp F7  &kp F8  &none                      &kp C_VOL_DN &kp LEFT     &kp DOWN &kp RIGHT     &kp PG_DN &none
    &none &kp F9 &kp F10 &kp F11 &kp F12 &none                      &td_lower    &kp LC(LEFT) &none    &kp LC(RIGHT) &none     &none
-                                &trans  r&trans &trans /**/ &trans &tog RAISE   &kp ENT
+                                &trans  r&trans &trans /**/ &trans &tog RAISE   &kp RET
                         >;
                 };
         };
@@ -315,7 +315,7 @@ bindings = <
 //    &none &kp F1 &kp F2  &kp F3  &kp F4  &none                      &kp C_VOL_UP &kp HOME     &kp UP   &kp END       &kp PG_UP &none
 //    &none &kp F5 &kp F6  &kp F7  &kp F8  &none                      &kp C_VOL_DN &kp LEFT     &kp DOWN &kp RIGHT     &kp PG_DN &none
 //    &none &kp F9 &kp F10 &kp F11 &kp F12 &none                      &td_lower    &kp LC(LEFT) &none    &kp LC(RIGHT) &none     &none
-//                                 &trans  r&trans &trans /**/ &trans &tog RAISE   &kp ENT
+//                                 &trans  r&trans &trans /**/ &trans &tog RAISE   &kp RET
 //                         >;
 //                 };
 //         };
