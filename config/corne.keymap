@@ -256,7 +256,7 @@
 // | --- |  \  | £$  |  %  | []  | RSE |             |  ;  |  1  |  2  |  3  |  ~  | --- |
 //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|  0  |
 bindings = <
-   &none &none         &td_amps        &td_par         &td_brc   &kp C_PP                      &mt PLUS STAR &kp N7 &kp N8 &kp N9 &kp CARET    &none
+   &none &bt BT_CLR    &td_amps        &td_par         &td_brc   &kp C_PP                      &mt PLUS STAR &kp N7 &kp N8 &kp N9 &kp CARET    &none
    &none &td_excl_pipe &td_dqt         &mt UNDER MINUS &kp EQUAL &kp NUHS                      &td_apos      &kp N4 &kp N5 &kp N6 &kp DQT      &none
    &none &kp NUBS      &mt DLLR LS(N3) &kp LS(N5)      &td_bkt   &td_raise                     &kp SEMI      &kp N1 &kp N2 &kp N3 &kp LS(NUHS) &none
                                                        &trans    &tog LOWER &trans /**/ &trans &trans        &kp N0
@@ -270,9 +270,9 @@ bindings = <
 // | --- | F9  | F10 | F11 | F12 |     |             | LWR |WDLFT|     |WDRT |     | --- |
 //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|-ENT-|
                 bindings = <
-   &none &kp F1 &kp F2  &kp F3  &kp F4  &none                      &kp C_VOL_UP &kp HOME     &kp UP   &kp END       &kp PG_UP &none
-   &none &kp F5 &kp F6  &kp F7  &kp F8  &none                      &kp C_VOL_DN &kp LEFT     &kp DOWN &kp RIGHT     &kp PG_DN &none
-   &none &kp F9 &kp F10 &kp F11 &kp F12 &none                      &td_lower    &kp LC(LEFT) &none    &kp LC(RIGHT) &none     &none
+   &none &kp F1 &kp F2  &kp F3  &kp F4  &none                      &kp C_VOL_UP &kp HOME     &kp UP   &kp END       &kp PG_UP  &none
+   &none &kp F5 &kp F6  &kp F7  &kp F8  &none                      &kp C_VOL_DN &kp LEFT     &kp DOWN &kp RIGHT     &kp PG_DN  &none
+   &none &kp F9 &kp F10 &kp F11 &kp F12 &none                      &td_lower    &kp LC(LEFT) &none    &kp LC(RIGHT) &bt BT_CLR &none
                                 &trans  &trans &trans /**/ &trans &tog RAISE   &kp RET
                         >;
                 };
