@@ -53,7 +53,7 @@
                         label = "or";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&macro_tap &kp PIPE &kp PIPE>;
+                        bindings = <&macro_tap &kp LS(NUBS) &kp LS(NUBS);
                 };
                 and: and {
                         label = "pipes";
@@ -135,7 +135,7 @@
                         label = "td_excl_pipe";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&mt PIPE EXCL>, <&or>;
+                        bindings = <&mt LS(NUBS) EXCL>, <&or>;
                 };
         };
 
@@ -220,8 +220,8 @@
 //                          |     |-LWR-|     | | ENT | RSE |  0  |
                         bindings = <
    &none &trans        &kp AMPS        &td_par         &td_brc   &trans                            &mt PLUS STAR &kp N7 &kp N8 &kp N9 &trans &none
-   &none &td_excl_pipe &kp DQT         &mt UNDER MINUS &kp EQUAL &trans                            &kp APOS      &kp N4 &kp N5 &kp N6 &trans &none
-   &none &kp BSLH      &mt DLLR LS(N3) &trans          &td_bkt  &trans                             &kp SEMI      &kp N1 &kp N2 &kp N3 &trans &none
+   &none &td_excl_pipe &kp AT         &mt UNDER MINUS &kp EQUAL &trans                            &kp LS(DQT)   &kp N4 &kp N5 &kp N6 &trans &none
+   &none &kp NUBS      &mt DLLR LS(N3) &trans          &td_bkt  &trans                             &kp SEMI      &kp N1 &kp N2 &kp N3 &trans &none
                                                        &trans    &tog LOWER &kp SPACE /**/ &kp RET &trans        &kp N0
                         >;
                 };
