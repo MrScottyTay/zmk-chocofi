@@ -47,7 +47,7 @@
                         label = "apostrophes";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&macro_tap &kp APOSTROPHE &kp APOSTROPHE &kp LEFT>;
+                        bindings = <&macro_tap &kp BSLH &kp BSLH &kp LEFT>;
                 };
                 or: or {
                         label = "or";
@@ -151,6 +151,13 @@
                         tapping-term-ms = <200>;
                         bindings = <&kp AT>, <&quotations>;
                 };
+                td_apos: behavior_td_apos {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "td_apos";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp BSLH>, <&apostrophes>;
+                };
         };
 
         combos{
@@ -228,13 +235,13 @@
 
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// | ---- |     |  &  | ()  | {}  |     |             | +*  |  7  |  8  |  9  |     | ---- |
-// | ---- | !|  | ""  | -_  |  =  |     |             | ''  |  4  |  5  |  6  |     | ---- |
-// | ---- |  \  | £$  |  %  | []  |     |             |  ;  |  1  |  2  |  3  |  @  | ---- |
+// | ---- |     |  &  | ()  | {}  |     |             | +*  |  7  |  8  |  9  |  ^  | ---- |
+// | ---- | !|  | ""  | -_  |  =  |     |             | ''  |  4  |  5  |  6  |  @  | ---- |
+// | ---- |  \  | £$  |  %  | []  |     |             |  ;  |  1  |  2  |  3  |  ~  | ---- |
 //                          |     |-LWR-|     | | ENT | RSE |  0  |
                         bindings = <
    &none &trans        &td_amps        &td_par         &td_brc   &trans                            &mt PLUS STAR &kp N7 &kp N8 &kp N9 &trans &none
-   &none &td_excl_pipe &td_dqt         &mt UNDER MINUS &kp EQUAL &trans                            &kp LS(DQT)   &kp N4 &kp N5 &kp N6 &trans &none
+   &none &td_excl_pipe &td_dqt         &mt UNDER MINUS &kp EQUAL &trans                            &td_apos      &kp N4 &kp N5 &kp N6 &trans &none
    &none &kp NUBS      &mt DLLR LS(N3) &trans          &td_bkt  &trans                             &kp SEMI      &kp N1 &kp N2 &kp N3 &trans &none
                                                        &trans    &tog LOWER &kp SPACE /**/ &kp RET &trans        &kp N0
                         >;
