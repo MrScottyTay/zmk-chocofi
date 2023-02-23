@@ -174,7 +174,7 @@
                 combo_gresc {
                         timeout-ms = <30>;
                         key-positions = <1 2>;
-                        bindings = <&kp gresc>;
+                        bindings = <&gresc>;
                 };
                 combo_lctrl {
                         timeout-ms = <30>;
