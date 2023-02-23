@@ -89,7 +89,7 @@
                 };
                 td_raise: behavior_td_raise {
                         compatible = "zmk,behavior-tap-dance";
-                        label = "td_lower";
+                        label = "td_raise";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
                         bindings = <&mo_sl RAISE RAISE>, <&tog RAISE>;
