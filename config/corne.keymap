@@ -27,43 +27,43 @@
                         label = "parens";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+                        bindings = <&macro_tap &kp LPAR &kp RPAR &kp LEFT>;
                 };
                 braces: braces {
                         label = "braces";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&kp LBRC &kp RBRC &kp LEFT>;
+                        bindings = <&macro_tap &kp LBRC &kp RBRC &kp LEFT>;
                 };
                 brackets: brackets {
                         label = "brackets";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&kp LBRKT &kp RBRKT &kp LEFT>;
+                        bindings = <&macro_tap &kp LBKT &kp RBKT &kp LEFT>;
                 };
                 quotations: quotations {
                         label = "quotations";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT>;
+                        bindings = <&macro_tap &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT>;
                 };
                 apostrophes: apostrophes {
                         label = "apostrophes";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&kp APOSTROPHE &kp APOSTROPHE &kp LEFT>;
+                        bindings = <&macro_tap &kp APOSTROPHE &kp APOSTROPHE &kp LEFT>;
                 };
                 or: or {
                         label = "or";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&kp PIPE &kp PIPE>;
+                        bindings = <&macro_tap &kp PIPE &kp PIPE>;
                 };
                 and: and {
                         label = "pipes";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&kp AMPS &kp AMPS>;
+                        bindings = <&macro_tap &kp AMPS &kp AMPS>;
                 };
         };
 
@@ -127,12 +127,12 @@
                         tapping-term-ms = <200>;
                         bindings = <&mt RBRC LBRC>, <&braces>;
                 };
-                td_brkt: behavior_td_brkt {
+                td_bkt: behavior_td_bkt {
                         compatible = "zmk,behavior-tap-dance";
-                        label = "td_brkt";
+                        label = "td_bkt";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&mt RBRKT LBRKT>, <&brackets>;
+                        bindings = <&mt RBKT LBKT>, <&brackets>;
                 };
                 mt_quote: global-quick-tap {
                         compatible = "zmk,behavior-hold-tap";
@@ -245,7 +245,7 @@
                         bindings = <
    &none &trans        &kp AMPS        &td_par         &td_brc   &trans                            &mt PLUS STAR &kp N7 &kp N8 &kp N9 &trans &none
    &none &td_excl_pipe &mt_quote       &mt UNDER MINUS &kp EQUAL &trans                            &mt_apos      &kp N4 &kp N5 &kp N6 &trans &none
-   &none &kp BLSH      &mt DLLR LS(N3) &trans          &td_brkt  &trans                            &kp SEMI      &kp N1 &kp N2 &kp N3 &trans &none
+   &none &kp BLSH      &mt DLLR LS(N3) &trans          &td_bkt  &trans                            &kp SEMI      &kp N1 &kp N2 &kp N3 &trans &none
                                                        &trans    &tog LOWER &kp SPACE /**/ &kp RET &trans        &kp N0
                         >;
                 };
