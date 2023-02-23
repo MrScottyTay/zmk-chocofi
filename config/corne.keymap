@@ -27,43 +27,43 @@
                         label = "parens";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&macro_tap &kp LPAR &kp RPAR &kp LEFT>;
+                        bindings = <&kp LPAR &kp RPAR &kp LEFT>;
                 };
                 braces: braces {
                         label = "braces";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&macro_tap &kp LBRC &kp RBRC &kp LEFT>;
+                        bindings = <&kp LBRC &kp RBRC &kp LEFT>;
                 };
                 brackets: brackets {
                         label = "brackets";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&macro_tap &kp LBRKT &kp RBRKT &kp LEFT>;
+                        bindings = <&kp LBRKT &kp RBRKT &kp LEFT>;
                 };
                 quotations: quotations {
                         label = "quotations";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&macro_tap &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT>;
+                        bindings = <&kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT>;
                 };
                 apostrophes: apostrophes {
                         label = "apostrophes";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&macro_tap &kp APOSTROPHE &kp APOSTROPHE &kp LEFT>;
+                        bindings = <&kp APOSTROPHE &kp APOSTROPHE &kp LEFT>;
                 };
                 or: or {
                         label = "or";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&macro_tap &kp PIPE &kp PIPE>;
+                        bindings = <&kp PIPE &kp PIPE>;
                 };
                 and: and {
                         label = "pipes";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&macro_tap &kp AMPS &kp AMPS>;
+                        bindings = <&kp AMPS &kp AMPS>;
                 };
         };
 
