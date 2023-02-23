@@ -134,20 +134,20 @@
                         tapping-term-ms = <200>;
                         bindings = <&mt RBKT LBKT>, <&brackets>;
                 };
-                mt_quote: global-quick-tap {
+                mt_quote: mt_quote {
                         compatible = "zmk,behavior-hold-tap";
                         label = "mt_quote";
-                        #binding-cells = <2>;
+                        #binding-cells = <0>;
                         flavor = "tap-preferred";
                         tapping-term-ms = <200>;
                         quick-tap-ms = <125>;
                         global-quick-tap;
                         bindings = <&quotations>, <&DOUBLE_QUOTES>;
                 };
-                mt_apos: global-quick-tap {
+                mt_apos: mt_apos {
                         compatible = "zmk,behavior-hold-tap";
                         label = "mt_apos";
-                        #binding-cells = <2>;
+                        #binding-cells = <0>;
                         flavor = "tap-preferred";
                         tapping-term-ms = <200>;
                         quick-tap-ms = <125>;
