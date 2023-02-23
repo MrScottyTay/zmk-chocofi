@@ -195,7 +195,7 @@
                 combo_backspace {
                         timeout-ms = <30>;
                         key-positions = <9 10>;
-                        bindings = <&kp backspace_delete>;
+                        bindings = <&backspace_delete>;
                 };
                 combo_enter {
                         timeout-ms = <30>;
