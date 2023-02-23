@@ -22,6 +22,39 @@
 
 
 / {
+        macros {
+                parens: parens {
+                        label = "parens";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&macro_tap &kp LPAR &kp RPAR &kp LEFT>;
+                };
+                braces: braces {
+                        label = "braces";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&macro_tap &kp LBRC &kp RBRC &kp LEFT>;
+                };
+                brackets: brackets {
+                        label = "brackets";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&macro_tap &kp LBRKT &kp RBRKT &kp LEFT>;
+                };
+                quotations: quotations {
+                        label = "quotations";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&macro_tap &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT>;
+                };
+                apostrophes: apostrophes {
+                        label = "apostrophes";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&macro_tap &kp APOSTROPHE &kp APOSTROPHE &kp LEFT>;
+                };
+        };
+
         behaviors {
                 mo_tog: behavior_mo_tog {
                         compatible = "zmk,behavior-hold-tap";
@@ -53,19 +86,56 @@
                         tapping-term-ms = <200>;
                         bindings = <&mo_sl RAISE RAISE>, <&tog RAISE>;
                 };
+                backspace_delete: backspace_delete {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "BACKSPACE_DELETE";
+                        #binding-cells = <0>;
+                        bindings = <&kp BACKSPACE>, <&kp DELETE>;
+                        mods = <(MOD_LCTL|MOD_RCTL|MOD_LSFT|MOD_RSFT)>;
+                };
+                skq: sticky_key_quick_release {
+                        compatible = "zmk,behavior-sticky-key";
+                        label = "STICKY_KEY_QUICK_RELEASE";
+                        #binding-cells = <1>;
+                        bindings = <&kp>;
+                        release-after-ms = <1000>;
+                        quick-release;
+                };
+                td_par: behavior_td_par {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "td_par";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&mt RPAR LPAR>, <&parens>;
+                };
+                td_brc: behavior_td_brc {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "td_brc";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&mt RBRC LBRC>, <&braces>;
+                };
+                td_brkt: behavior_td_brkt {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "td_brkt";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&mt RBRKT LBRKT>, <&brackets>;
+                };
         };
 
         combos{
                 compatible = "zmk,combos";
+                // left side
                 combo_tab {
                         timeout-ms = <30>;
                         key-positions = <13 14>;
                         bindings = <&kp TAB>;
                 };
-                combo_esc {
+                combo_gresc {
                         timeout-ms = <30>;
                         key-positions = <1 2>;
-                        bindings = <&kp ESC>;
+                        bindings = <&kp gresc>;
                 };
                 combo_lctrl {
                         timeout-ms = <30>;
@@ -82,15 +152,31 @@
                         key-positions = <27 28>;
                         bindings = <&sk LALT>;
                 };
-                combo_lgui_shift {
+                //right side
+                combo_backspace {
                         timeout-ms = <30>;
-                        key-positions = <26 27 36>;
-                        bindings = <&sk LS(LGUI)>;
+                        key-positions = <9 10>;
+                        bindings = <&kp backspace_delete>;
                 };
-                combo_lgui_lctrl {
+                combo_enter {
                         timeout-ms = <30>;
-                        key-positions = <25 26 27>;
-                        bindings = <&sk LC(LGUI)>;
+                        key-positions = <21 22>;
+                        bindings = <&kp ENTER>;
+                };
+                combo_rctrl {
+                        timeout-ms = <30>;
+                        key-positions = <33 34>;
+                        bindings = <&sk RCTRL>;
+                };
+                combo_rgui {
+                        timeout-ms = <30>;
+                        key-positions = <32 33>;
+                        bindings = <&sk RGUI>;
+                };
+                combo_ralt {
+                        timeout-ms = <30>;
+                        key-positions = <31 32>;
+                        bindings = <&sk RALT>;
                 };
         };
 
@@ -99,29 +185,29 @@
 
                 default_layer {
 // --------------------------------------------------------------------------------
-// | ---- |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | ---- |
-// | ---- |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  | ---- |
-// | ---- |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | ---- |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+// | ---- |  Q  |  W  |  F  |  P  |  B  |             |  J  |  L   |  U  |  Y  |  ;  | ---- |
+// | ---- |  A  |  R  |  S  |  T  |  G  |             |  M  |  N   |  E  |  I  |  O  | ---- |
+// | ---- |  Z  |  X  |  C  |  D  |  V  |             |  K  |  H   |  ,  |  .  |  /  | ---- |
+//                          | BSP | LWR | SHF | | SPC | RSE  | ENT |
                         bindings = <
-   &none  &kp Q &kp W    &kp F    &kp P        &kp B           &kp J   &kp L        &kp U     &kp Y   &kp SEMI    &none // 11
-   &none  &kp A &kp R    &kp S    &kp T        &kp G           &kp M   &kp N        &kp E     &kp I   &kp O       &none // 23
-   &none  &kp Z &kp X    &kp C    &kp D        &kp V           &kp K   &kp H        &kp COMMA &kp DOT &kp FSLH    &none // 35
-                         &kp LGUI &td_lower &kp SPACE       &kp RET &mo RAISE &kp RALT
+   &none  &kp Q &kp W    &kp F  &kp P         &kp B                           &kp J     &kp L     &kp U     &kp Y   &kp SEMI &none // 11
+   &none  &kp A &kp R    &kp S  &kp T         &kp G                           &kp M     &kp N     &kp E     &kp I   &kp O    &none // 23
+   &none  &kp Z &kp X    &kp C  &kp D         &kp V                           &kp K     &kp H     &kp COMMA &kp DOT &kp FSLH &none // 35
+                                &kp BACKSPACE &td_lower &skq LSHIFT &kp SPACE &mo RAISE &kp ENTER
                         >;
                 };
 
                 lower_layer {
 // -------------------------------------------------------------------------------
-// | ---- |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | ---- |
-// | ---- | BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     | ---- |
-// | ---- |     |     |     |     |     |   |     |     |     |     |     | ---- |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// | ---- |     |     | ()  | {}  |     |             | +*  |  7  |  8  |  9  |     | ---- |
+// | ---- |     | ""  | -_  |  =  |     |             | ''  |  4  |  5  |  6  |     | ---- |
+// | ---- |     |     |     | []  |     |             |  ;  |  1  |  2  |  3  |     | ---- |
+//                          |     |-LWR-|     | | ENT | RSE |  0  |
                         bindings = <
-   &none &kp N1       &kp N2       &kp N3          &mt RBRC LBRC &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &none
-   &none &kp TAB &bt BT_SEL 1 &mt UNDER MINUS &mt RPAR LPAR &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &none
-   &none &trans       &trans       &trans          &mt RBKT LBKT &trans         &trans   &trans   &trans &trans    &trans &none
-                                   &kp LGUI        &tog LOWER        &kp SPACE      &kp RET  &trans   &kp RALT
+   &none &trans &trans        &td_par         &td_brc   &trans                       &mt PLUS STAR                &kp N7 &kp N8 &kp N9 &trans &none
+   &none &trans &trans        &mt UNDER MINUS &kp EQUAL &trans                       &mt &apostrophes APOSTROPHE  &kp N4 &kp N5 &kp N6 &trans &none
+   &none &trans &mt &apostrophes APOSTROPHE       &trans          &td_brkt  &trans                       &kp SEMI                     &kp N1 &kp N2 &kp N3 &trans &none
+                                              &trans    &tog LOWER &kp SPACE &kp RET &trans                       &kp N0
                         >;
                 };
 
