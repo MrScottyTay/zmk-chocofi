@@ -10,14 +10,10 @@
 
 #define MO_TOG(layer) &mo_tog layer layer // macro to apply momentary on hold, toggle on tap
 #define MO_SL(layer) &mo_sl layer layer // macro to apply momentary on hold sticky on tap
-// #define TD_MO_SL(layer) &td_mo_sl layer layer // macro to apply momentary on hold, sticky on tap, tog on double tap
-#define TD_SL_TOG(layer) &td_sl_tog layer layer // macro to apply toggle on tap, toggle on double tap
 
 #define DEFAULT 0
 #define LOWER 1
-// #define LOWER_TOG 2
 #define RAISE 2
-// #define RAISE_TOG 4
 
 
 
@@ -134,26 +130,6 @@
                         tapping-term-ms = <200>;
                         bindings = <&mt RBKT LBKT>, <&brackets>;
                 };
-                // mt_dqt: mt_dqt {
-                //         compatible = "zmk,behavior-hold-tap";
-                //         label = "mt_dqt";
-                //         #binding-cells = <0>;
-                //         flavor = "tap-preferred";
-                //         tapping-term-ms = <200>;
-                //         quick-tap-ms = <125>;
-                //         global-quick-tap;
-                //         bindings = <&quotations>, <&DQT>;
-                // };
-                // mt_apos: mt_apos {
-                //         compatible = "zmk,behavior-hold-tap";
-                //         label = "mt_apos";
-                //         #binding-cells = <0>;
-                //         flavor = "tap-preferred";
-                //         tapping-term-ms = <200>;
-                //         quick-tap-ms = <125>;
-                //         global-quick-tap;
-                //         bindings = <&apostrophes>, <&APOS>;
-                // };
                 td_excl_pipe: behavior_td_excl_pipe {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_excl_pipe";
@@ -249,15 +225,6 @@
                                                        &trans    &tog LOWER &kp SPACE /**/ &kp RET &trans        &kp N0
                         >;
                 };
-
-//                 lower_toggle_layer {
-//                         bindings = <
-//    &none &trans &trans &trans &trans      &trans     &trans &trans &trans &trans &trans &none
-//    &none &trans &trans &trans &trans      &trans     &trans &trans &trans &trans &trans &none
-//    &none &trans &trans &trans &trans      &trans     &trans &trans &trans &trans &trans &none
-//                        &trans &to DEFAULT &trans     &trans &trans &trans
-//                         >;
-//                 };
 
                 raise_layer {
 // -------------------------------------------------------------------------------
