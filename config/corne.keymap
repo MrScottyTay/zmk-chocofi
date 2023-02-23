@@ -41,7 +41,7 @@
                         label = "quotations";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&macro_tap &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT>;
+                        bindings = <&macro_tap &kp AT &kp AT &kp LEFT>;
                 };
                 apostrophes: apostrophes {
                         label = "apostrophes";
@@ -136,6 +136,20 @@
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
                         bindings = <&mt LS(NUBS) EXCL>, <&or>;
+                };
+                td_amps: behavior_td_amps {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "td_amps";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp LS(NUBS)>, <&or>;
+                };
+                td_dqt: behavior_td_dqt {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "td_amps";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp AT>, <&quotations>;
                 };
         };
 
