@@ -134,15 +134,15 @@
                         tapping-term-ms = <200>;
                         bindings = <&mt RBKT LBKT>, <&brackets>;
                 };
-                mt_quote: mt_quote {
+                mt_dqt: mt_dqt {
                         compatible = "zmk,behavior-hold-tap";
-                        label = "mt_quote";
+                        label = "mt_dqt";
                         #binding-cells = <0>;
                         flavor = "tap-preferred";
                         tapping-term-ms = <200>;
                         quick-tap-ms = <125>;
                         global-quick-tap;
-                        bindings = <&quotations>, <&DOUBLE_QUOTES>;
+                        bindings = <&quotations>, <&DQT>;
                 };
                 mt_apos: mt_apos {
                         compatible = "zmk,behavior-hold-tap";
@@ -152,7 +152,7 @@
                         tapping-term-ms = <200>;
                         quick-tap-ms = <125>;
                         global-quick-tap;
-                        bindings = <&apostrophes>, <&APOSTROPHE>;
+                        bindings = <&apostrophes>, <&APOS>;
                 };
                 td_excl_pipe: behavior_td_excl_pipe {
                         compatible = "zmk,behavior-tap-dance";
@@ -238,14 +238,14 @@
 
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// | ---- |     |     | ()  | {}  |     |             | +*  |  7  |  8  |  9  |     | ---- |
-// | ---- |     | ""  | -_  |  =  |     |             | ''  |  4  |  5  |  6  |     | ---- |
-// | ---- |     |     |     | []  |     |             |  ;  |  1  |  2  |  3  |     | ---- |
+// | ---- |     |  &  | ()  | {}  |     |             | +*  |  7  |  8  |  9  |     | ---- |
+// | ---- | !|  | ""  | -_  |  =  |     |             | ''  |  4  |  5  |  6  |     | ---- |
+// | ---- |  \  | £$  |     | []  |     |             |  ;  |  1  |  2  |  3  |     | ---- |
 //                          |     |-LWR-|     | | ENT | RSE |  0  |
                         bindings = <
    &none &trans        &kp AMPS        &td_par         &td_brc   &trans                            &mt PLUS STAR &kp N7 &kp N8 &kp N9 &trans &none
-   &none &td_excl_pipe &mt_quote       &mt UNDER MINUS &kp EQUAL &trans                            &mt_apos      &kp N4 &kp N5 &kp N6 &trans &none
-   &none &kp BLSH      &mt DLLR LS(N3) &trans          &td_bkt  &trans                            &kp SEMI      &kp N1 &kp N2 &kp N3 &trans &none
+   &none &td_excl_pipe &mt_qtd         &mt UNDER MINUS &kp EQUAL &trans                            &mt_apos      &kp N4 &kp N5 &kp N6 &trans &none
+   &none &kp BLSH      &mt DLLR LS(N3) &trans          &td_bkt  &trans                             &kp SEMI      &kp N1 &kp N2 &kp N3 &trans &none
                                                        &trans    &tog LOWER &kp SPACE /**/ &kp RET &trans        &kp N0
                         >;
                 };
