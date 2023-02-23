@@ -53,6 +53,18 @@
                         #binding-cells = <0>;
                         bindings = <&macro_tap &kp APOSTROPHE &kp APOSTROPHE &kp LEFT>;
                 };
+                or: or {
+                        label = "or";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&macro_tap &kp PIPE &kp PIPE>;
+                };
+                and: and {
+                        label = "pipes";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&macro_tap &kp AMPS &kp AMPS>;
+                };
         };
 
         behaviors {
@@ -122,6 +134,33 @@
                         tapping-term-ms = <200>;
                         bindings = <&mt RBRKT LBRKT>, <&brackets>;
                 };
+                mt_quote: global-quick-tap {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "mt_quote";
+                        #binding-cells = <2>;
+                        flavor = "tap-preferred";
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <125>;
+                        global-quick-tap;
+                        bindings = <&quotations>, <&DOUBLE_QUOTES>;
+                };
+                mt_apos: global-quick-tap {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "mt_apos";
+                        #binding-cells = <2>;
+                        flavor = "tap-preferred";
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <125>;
+                        global-quick-tap;
+                        bindings = <&apostrophes>, <&APOSTROPHE>;
+                };
+                td_excl_pipe: behavior_td_excl_pipe {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "td_excl_pipe";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&mt PIPE EXCL>, <&or>;
+                };
         };
 
         combos{
@@ -184,30 +223,30 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-// --------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------
 // | ---- |  Q  |  W  |  F  |  P  |  B  |             |  J  |  L   |  U  |  Y  |  ;  | ---- |
 // | ---- |  A  |  R  |  S  |  T  |  G  |             |  M  |  N   |  E  |  I  |  O  | ---- |
 // | ---- |  Z  |  X  |  C  |  D  |  V  |             |  K  |  H   |  ,  |  .  |  /  | ---- |
 //                          | BSP | LWR | SHF | | SPC | RSE  | ENT |
                         bindings = <
-   &none  &kp Q &kp W    &kp F  &kp P         &kp B                           &kp J     &kp L     &kp U     &kp Y   &kp SEMI &none // 11
-   &none  &kp A &kp R    &kp S  &kp T         &kp G                           &kp M     &kp N     &kp E     &kp I   &kp O    &none // 23
-   &none  &kp Z &kp X    &kp C  &kp D         &kp V                           &kp K     &kp H     &kp COMMA &kp DOT &kp FSLH &none // 35
-                                &kp BACKSPACE &td_lower &skq LSHIFT &kp SPACE &mo RAISE &kp ENTER
+   &none  &kp Q &kp W    &kp F  &kp P         &kp B                                &kp J     &kp L     &kp U     &kp Y   &kp SEMI &none // 11
+   &none  &kp A &kp R    &kp S  &kp T         &kp G                                &kp M     &kp N     &kp E     &kp I   &kp O    &none // 23
+   &none  &kp Z &kp X    &kp C  &kp D         &kp V                                &kp K     &kp H     &kp COMMA &kp DOT &kp FSLH &none // 35
+                                &kp BACKSPACE &td_lower &skq LSHIFT /**/ &kp SPACE &mo RAISE &kp ENTER
                         >;
                 };
 
                 lower_layer {
-// -------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------
 // | ---- |     |     | ()  | {}  |     |             | +*  |  7  |  8  |  9  |     | ---- |
 // | ---- |     | ""  | -_  |  =  |     |             | ''  |  4  |  5  |  6  |     | ---- |
 // | ---- |     |     |     | []  |     |             |  ;  |  1  |  2  |  3  |     | ---- |
 //                          |     |-LWR-|     | | ENT | RSE |  0  |
                         bindings = <
-   &none &trans &trans        &td_par         &td_brc   &trans                       &mt PLUS STAR                &kp N7 &kp N8 &kp N9 &trans &none
-   &none &trans &trans        &mt UNDER MINUS &kp EQUAL &trans                       &mt &apostrophes APOSTROPHE  &kp N4 &kp N5 &kp N6 &trans &none
-   &none &trans &mt &apostrophes APOSTROPHE       &trans          &td_brkt  &trans                       &kp SEMI                     &kp N1 &kp N2 &kp N3 &trans &none
-                                              &trans    &tog LOWER &kp SPACE &kp RET &trans                       &kp N0
+   &none &trans        &kp AMPS        &td_par         &td_brc   &trans                            &mt PLUS STAR &kp N7 &kp N8 &kp N9 &trans &none
+   &none &td_excl_pipe &mt_quote       &mt UNDER MINUS &kp EQUAL &trans                            &mt_apos      &kp N4 &kp N5 &kp N6 &trans &none
+   &none &kp BLSH      &mt DLLR LS(N3) &trans          &td_brkt  &trans                            &kp SEMI      &kp N1 &kp N2 &kp N3 &trans &none
+                                                       &trans    &tog LOWER &kp SPACE /**/ &kp RET &trans        &kp N0
                         >;
                 };
 
