@@ -16,6 +16,13 @@
 #define RAISE 2
 // #define MISC 3
 
+#define TD_TAPTERM 175
+#define LAYER_TAPTERM 175
+#define COMBO_TIMEOUT 32
+
+#define QUICKTAP_MS 125
+#define QUICKTAP_TERM 175
+
 / {
         // conditional_layers {
         //         compatible = "zmk,conditional-layers";
@@ -88,7 +95,7 @@
                         label = "mo_tog";
                         #binding-cells = <2>;
                         flavor = "hold-preferred";
-                        tapping-term-ms = <175>;
+                        tapping-term-ms = <LAYER_TAPTERM>;
                         bindings = <&mo>, <&tog>;
                 };
                 mo_sl: behavior_mo_sl {
@@ -96,21 +103,21 @@
                         label = "mo_sl";
                         #binding-cells = <2>;
                         flavor = "hold-preferred";
-                        tapping-term-ms = <175>;
+                        tapping-term-ms = <LAYER_TAPTERM>;
                         bindings = <&mo>, <&sl>;
                 };
                 td_lower: behavior_td_lower {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_lower";
                         #binding-cells = <0>;
-                        tapping-term-ms = <175>;
+                        tapping-term-ms = <LAYER_TAPTERM>;
                         bindings = <MO_SL(LOWER)>, <&tog LOWER>;
                 };
                 td_raise: behavior_td_raise {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_raise";
                         #binding-cells = <0>;
-                        tapping-term-ms = <175>;
+                        tapping-term-ms = <LAYER_TAPTERM>;
                         bindings = <MO_TOG(RAISE)>, <&tog RAISE>;
                 };
                 bksp_del: bksp_del {
@@ -132,21 +139,21 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_lsft";
                         #binding-cells = <0>;
-                        tapping-term-ms = <175>;
+                        tapping-term-ms = <TD_TAPTERM>;
                         bindings = <&skq LSFT>, <&caps_word>;
                 };
                 td_par: behavior_td_par {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_par";
                         #binding-cells = <0>;
-                        tapping-term-ms = <175>;
+                        tapping-term-ms = <TD_TAPTERM>;
                         bindings = <&mt RPAR LPAR>, <&parens>;
                 };
                 td_brc: behavior_td_brc {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_brc";
                         #binding-cells = <0>;
-                        tapping-term-ms = <175>;
+                        tapping-term-ms = <TD_TAPTERM>;
                         bindings = <&mt RBRC LBRC>, <&braces>;
                 };
                 gqt: global_quick_tap {
@@ -154,8 +161,8 @@
                         label = "gqt";
                         #binding-cells = <2>;
                         flavor = "tap-preferred";
-                        tapping-term-ms = <175>;
-                        quick-tap-ms = <125>;
+                        tapping-term-ms = <QUICKTAP_TERM>;
+                        quick-tap-ms = <QUICKTAP_MS>;
                         global-quick-tap;
                         bindings = <&kp>, <&kp>;
                 };
@@ -163,42 +170,42 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_bkt";
                         #binding-cells = <0>;
-                        tapping-term-ms = <175>;
+                        tapping-term-ms = <TD_TAPTERM>;
                         bindings = <&mt RBKT LBKT>, <&brackets>;
                 };
                 td_excl_pipe: behavior_td_excl_pipe {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_excl_pipe";
                         #binding-cells = <0>;
-                        tapping-term-ms = <175>;
+                        tapping-term-ms = <TD_TAPTERM>;
                         bindings = <&gqt LS(NUBS) EXCL>, <&or>;
                 };
                 td_amps: behavior_td_amps {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_amps";
                         #binding-cells = <0>;
-                        tapping-term-ms = <175>;
+                        tapping-term-ms = <TD_TAPTERM>;
                         bindings = <&kp LS(N7)>, <&and>;
                 };
                 td_dqt: behavior_td_dqt {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_dqt";
                         #binding-cells = <0>;
-                        tapping-term-ms = <175>;
+                        tapping-term-ms = <TD_TAPTERM>;
                         bindings = <&kp AT>, <&quotations>;
                 };
                 td_apos: behavior_td_apos {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_apos";
                         #binding-cells = <0>;
-                        tapping-term-ms = <175>;
+                        tapping-term-ms = <TD_TAPTERM>;
                         bindings = <&kp APOS>, <&apostrophes>;
                 };
                 td_equals: behavior_td_equals {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_equals";
                         #binding-cells = <0>;
-                        tapping-term-ms = <175>;
+                        tapping-term-ms = <TD_TAPTERM>;
                         bindings = <&kp EQUAL>, <&equals>;
                 };
         };
