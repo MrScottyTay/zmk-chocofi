@@ -56,7 +56,7 @@
                         label = "apostrophes";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&macro_tap &kp BSLH &kp BSLH &kp LEFT>;
+                        bindings = <&macro_tap &kp APOS &kp APOS &kp LEFT>;
                 };
                 or: or {
                         label = "or";
@@ -172,7 +172,7 @@
                         label = "td_apos";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&kp BSLH>, <&apostrophes>;
+                        bindings = <&kp APOS>, <&apostrophes>;
                 };
         };
 
