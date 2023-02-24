@@ -16,7 +16,12 @@
 #define RAISE 2
 // #define MISC 3
 
+#define TD_TAPTERM = 175
+#define LAYER_TAPTERM = 175
+#define COMBO_TIMEOUT = 32
 
+#define QUICKTAP_MS = 125
+#define QUICKTAP_TERM = 175
 
 / {
         // conditional_layers {
@@ -90,7 +95,7 @@
                         label = "mo_tog";
                         #binding-cells = <2>;
                         flavor = "hold-preferred";
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <LAYER_TAPTERM>;
                         bindings = <&mo>, <&tog>;
                 };
                 mo_sl: behavior_mo_sl {
@@ -98,22 +103,22 @@
                         label = "mo_sl";
                         #binding-cells = <2>;
                         flavor = "hold-preferred";
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <LAYER_TAPTERM>;
                         bindings = <&mo>, <&sl>;
                 };
                 td_lower: behavior_td_lower {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_lower";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
-                        bindings = <&mo_sl 1 1>, <&tog 1>;
+                        tapping-term-ms = <LAYER_TAPTERM>;
+                        bindings = <&MO_SL(LOWER)>, <&tog LOWER>;
                 };
                 td_raise: behavior_td_raise {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_raise";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
-                        bindings = <&mo_sl RAISE RAISE>, <&tog RAISE>;
+                        tapping-term-ms = <LAYER_TAPTERM>;
+                        bindings = <MO_TOG(RAISE)>, <&tog RAISE>;
                 };
                 bksp_del: bksp_del {
                         compatible = "zmk,behavior-mod-morph";
@@ -134,63 +139,73 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_lsft";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <TD_TAPTERM>;
                         bindings = <&skq LSFT>, <&caps_word>;
                 };
                 td_par: behavior_td_par {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_par";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <TD_TAPTERM>;
                         bindings = <&mt RPAR LPAR>, <&parens>;
                 };
                 td_brc: behavior_td_brc {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_brc";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <TD_TAPTERM>;
                         bindings = <&mt RBRC LBRC>, <&braces>;
+                };
+                gqt: global_quick_tap {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "gqt";
+                        #binding-cells = <2>;
+                        flavor = "tap-preferred";
+                        tapping-term-ms = <QUICKTAP_TERM>;
+                        quick-tap-ms = <QUICKTAP_MS>;
+                        global-quick-tap;
+                        bindings = <&kp>, <&kp>;
                 };
                 td_bkt: behavior_td_bkt {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_bkt";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <TD_TAPTERM>;
                         bindings = <&mt RBKT LBKT>, <&brackets>;
                 };
                 td_excl_pipe: behavior_td_excl_pipe {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_excl_pipe";
                         #binding-cells = <0>;
-                        tapping-term-ms = <250>;
-                        bindings = <&mt LS(NUBS) EXCL>, <&or>;
+                        tapping-term-ms = <TD_TAPTERM>;
+                        bindings = <&gqt LS(NUBS) EXCL>, <&or>;
                 };
                 td_amps: behavior_td_amps {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_amps";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <TD_TAPTERM>;
                         bindings = <&kp LS(N7)>, <&and>;
                 };
                 td_dqt: behavior_td_dqt {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_dqt";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <TD_TAPTERM>;
                         bindings = <&kp AT>, <&quotations>;
                 };
                 td_apos: behavior_td_apos {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_apos";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <TD_TAPTERM>;
                         bindings = <&kp APOS>, <&apostrophes>;
                 };
                 td_equals: behavior_td_equals {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_equals";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <TD_TAPTERM>;
                         bindings = <&kp EQUAL>, <&equals>;
                 };
         };
@@ -199,53 +214,53 @@
                 compatible = "zmk,combos";
                 // left side
                 combo_tab {
-                        timeout-ms = <30>;
+                        timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <13 14>;
                         bindings = <&kp TAB>;
                 };
                 combo_gresc {
-                        timeout-ms = <30>;
+                        timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <1 2>;
                         bindings = <&gresc>;
                 };
                 combo_lctrl {
-                        timeout-ms = <30>;
+                        timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <25 26>;
                         bindings = <&sk LCTRL>;
                 };
                 combo_lgui {
-                        timeout-ms = <30>;
+                        timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <26 27>;
                         bindings = <&sk LGUI>;
                 };
                 combo_lalt {
-                        timeout-ms = <30>;
+                        timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <27 28>;
                         bindings = <&sk LALT>;
                 };
                 //right side
                 combo_backspace {
-                        timeout-ms = <30>;
+                        timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <9 10>;
                         bindings = <&bksp_del>;
                 };
                 combo_enter {
-                        timeout-ms = <30>;
+                        timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <21 22>;
                         bindings = <&kp ENTER>;
                 };
                 combo_rctrl {
-                        timeout-ms = <30>;
+                        timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <33 34>;
                         bindings = <&sk RCTRL>;
                 };
                 combo_rgui {
-                        timeout-ms = <30>;
+                        timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <32 33>;
                         bindings = <&sk RGUI>;
                 };
                 combo_ralt {
-                        timeout-ms = <30>;
+                        timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <31 32>;
                         bindings = <&sk RALT>;
                 };
@@ -261,10 +276,10 @@
 // | --- |  Z  |  X  |  C  |  D  |  V  |             |  K  |  H  |  ,  |  .  |  /  | --- |
 //                         | BSP | LWR | SHF | | SPC | RSE | ENT |
                         bindings = <
-   &none  &kp Q &kp W    &kp F  &kp P     &kp B                                &kp J     &kp L     &kp U     &kp Y   &kp SEMI &none // 11
-   &none  &kp A &kp R    &kp S  &kp T     &kp G                                &kp M     &kp N     &kp E     &kp I   &kp O    &none // 23
-   &none  &kp Z &kp X    &kp C  &kp D     &kp V                                &kp K     &kp H     &kp COMMA &kp DOT &kp FSLH &none // 35
-                                &bksp_del &td_lower &skq LSHIFT /**/ &kp SPACE &td_raise &kp ENTER
+   &none  &kp Q &kp W    &kp F  &kp P     &kp B                             &kp J     &kp L     &kp U     &kp Y   &kp SEMI &none // 11
+   &none  &kp A &kp R    &kp S  &kp T     &kp G                             &kp M     &kp N     &kp E     &kp I   &kp O    &none // 23
+   &none  &kp Z &kp X    &kp C  &kp D     &kp V                             &kp K     &kp H     &kp COMMA &kp DOT &kp FSLH &none // 35
+                                &bksp_del &td_lower &td_lsft /**/ &kp SPACE &td_raise &kp ENTER
                         >;
                 };
 
@@ -275,10 +290,10 @@
 // | --- |  \  | £$  |  %  | []  | RSE |             |  ;  |  1  |  2  |  3  |  ~  | --- |
 //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|  0  |
 bindings = <
-   &none &gresc        &td_amps        &td_par         &td_brc    &kp C_PP                      &mt PLUS STAR &kp N7 &kp N8 &kp N9 &kp CARET    &none
-   &none &td_excl_pipe &td_dqt         &mt UNDER MINUS &td_equals &kp NUHS                      &td_apos      &kp N4 &kp N5 &kp N6 &kp DQT      &none
-   &none &kp NUBS      &mt DLLR LS(N3) &kp LS(N5)      &td_bkt    &td_raise                     &kp SEMI      &kp N1 &kp N2 &kp N3 &kp LS(NUHS) &none
-                                                       &trans     &tog LOWER &trans /**/ &trans &trans        &kp N0
+   &none &gresc        &td_amps        &td_par          &td_brc    &kp C_PP                      &mt STAR PLUS &kp N7 &kp N8 &kp N9 &kp CARET    &none
+   &none &td_excl_pipe &td_dqt         &gqt UNDER MINUS &td_equals &kp NUHS                      &td_apos      &kp N4 &kp N5 &kp N6 &kp DQT      &none
+   &none &kp NUBS      &mt DLLR LS(N3) &kp LS(N5)       &td_bkt    &td_raise                     &kp SEMI      &kp N1 &kp N2 &kp N3 &kp LS(NUHS) &none
+                                                        &trans     &tog LOWER &trans /**/ &trans &trans        &kp N0
                         >;
                 };
 
@@ -312,67 +327,3 @@ bindings = <
 
         };
 };
-
-
-// backup
-
-//                 lower_layer {
-// // ---------------------------------------------------------------------------------------
-// // | --- |     |  &  | ()  | {}  |PLAY |             | +*  |  7  |  8  |  9  |  ^  | --- |
-// // | --- | !|  | ""  | -_  |  =  |  #  |             | ''  |  4  |  5  |  6  |  @  | --- |
-// // | --- |  \  | £$  |  %  | []  | RSE |             |  ;  |  1  |  2  |  3  |  ~  | --- |
-// //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|  0  |
-// bindings = <
-//    &none &none         &td_amps        &td_par         &td_brc   &kp C_PP                      &mt PLUS STAR &kp N7 &kp N8 &kp N9 &kp CARET    &none
-//    &none &td_excl_pipe &td_dqt         &mt UNDER MINUS &kp EQUAL &kp NUHS                      &td_apos      &kp N4 &kp N5 &kp N6 &kp DQT      &none
-//    &none &kp NUBS      &mt DLLR LS(N3) &kp LS(N5)      &td_bkt   &td_raise                     &kp SEMI      &kp N1 &kp N2 &kp N3 &kp LS(NUHS) &none
-//                                                        &trans    &tog LOWER &trans /**/ &trans &trans        &kp N0
-//                         >;
-//                 };
-
-//                 raise_layer {
-// // ---------------------------------------------------------------------------------------
-// // | --- | F1  | F2  | F3  | F4  |PLAY |             |VOL+ |HOME | UP  | END |PGUP | --- |
-// // | --- | F5  | F6  | F7  | F8  |     |             |VOL- |LEFT |DOWN |RIGHT|PGDN | --- |
-// // | --- | F9  | F10 | F11 | F12 |     |             | LWR |WDLFT|     |WDRT |     | --- |
-// //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|-ENT-|
-//                 bindings = <
-//    &none &kp F1 &kp F2  &kp F3  &kp F4  &none                      &kp C_VOL_UP &kp HOME     &kp UP   &kp END       &kp PG_UP &none
-//    &none &kp F5 &kp F6  &kp F7  &kp F8  &none                      &kp C_VOL_DN &kp LEFT     &kp DOWN &kp RIGHT     &kp PG_DN &none
-//    &none &kp F9 &kp F10 &kp F11 &kp F12 &none                      &td_lower    &kp LC(LEFT) &none    &kp LC(RIGHT) &none     &none
-//                                 &trans  r&trans &trans /**/ &trans &tog RAISE   &kp RET
-//                         >;
-//                 };
-
-
-
-
-//alternate
- 
-//                 lower_layer {
-// // ----------------------------------------------------------------------------------------
-// // | --- | F1  | F2  | F3  | F4  |PLAY |              | +*  |  7  |  8  |  9  |  ^  | --- |
-// // | --- | F5  | F6  | F7  | F8  |     |              | ''  |  4  |  5  |  6  |  @  | --- |
-// // | --- | F9  | F10 | F11 | F12 | RSE |              |  ;  |  1  |  2  |  3  |  ~  | --- |
-// //                          |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|  0  |
-//                         bindings = <
-//    &none &kp F1 &kp F2  &kp F3  &kp F4  &kp C_PP                      &mt PLUS STAR &kp N7 &kp N8   &kp N9 &kp CARET    &none
-//    &none &kp F5 &kp F6  &kp F7  &kp F8  &none                         &td_apos      &kp N4 &kp N5   &kp N6 &kp DQT      &none
-//    &none &kp F9 &kp F10 &kp F11 &kp F12 &td_raise                     &kp SEMI      &kp N1 &kp N2   &kp N3 &kp LS(NUHS) &none
-//                                 &trans  &tog LOWER &trans /**/ &trans &trans        &kp N0
-//                         >;
-//                 };
-
-//                 raise_layer {
-// // ---------------------------------------------------------------------------------------
-// // | --- |     |  &  | ()  | {}  |PLAY |             |VOL+ |HOME | UP  | END |PGUP | --- |
-// // | --- | !|  | ""  | -_  |  =  |  #  |             |VOL- |LEFT |DOWN |RIGHT|PGDN | --- |
-// // | --- |  \  | £$  |  %  | []  |     |             | LWR |WDLFT|     |WDRT |     | --- |
-// //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|-ENT-|
-//                         bindings = <
-//    &none &none         &td_amps        &td_par         &td_brc   &kp C_PP                  &kp C_VOL_UP &kp HOME     &kp UP   &kp END       &kp PG_UP &none
-//    &none &td_excl_pipe &td_dqt         &mt UNDER MINUS &kp EQUAL &kp NUHS                  &kp C_VOL_DN &kp LEFT     &kp DOWN &kp RIGHT     &kp PG_DN &none
-//    &none &kp NUBS      &mt DLLR LS(N3) &kp LS(N5)      &td_bkt   &none                     &td_lower    &kp LC(LEFT) &none    &kp LC(RIGHT) &none     &none
-//                                                        &trans    &trans &trans /**/ &trans &tog RAISE   &kp RET
-//                         >;
-//                 };
