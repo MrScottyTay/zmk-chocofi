@@ -76,6 +76,12 @@
                         #binding-cells = <0>;
                         bindings = <&macro_tap &kp LS(N7) &kp LS(N7)>;
                 };
+                equals: equals {
+                        label = "equals";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&macro_tap &kp EQUAL &kp EQUAL>;
+                };
         };
 
         behaviors {
@@ -179,6 +185,13 @@
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
                         bindings = <&kp APOS>, <&apostrophes>;
+                };
+                td_equals: behavior_td_equals {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "td_equals";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp EQUAL>, <&equals>;
                 };
         };
 
