@@ -16,13 +16,6 @@
 #define RAISE 2
 // #define MISC 3
 
-#define TD_TAPTERM = 175
-#define LAYER_TAPTERM = 175
-#define COMBO_TIMEOUT = 32
-
-#define QUICKTAP_MS = 125
-#define QUICKTAP_TERM = 175
-
 / {
         // conditional_layers {
         //         compatible = "zmk,conditional-layers";
@@ -161,8 +154,8 @@
                         label = "gqt";
                         #binding-cells = <2>;
                         flavor = "tap-preferred";
-                        tapping-term-ms = <QUICKTAP_TERM>;
-                        quick-tap-ms = <QUICKTAP_MS>;
+                        tapping-term-ms = <175>;
+                        quick-tap-ms = <125>;
                         global-quick-tap;
                         bindings = <&kp>, <&kp>;
                 };
