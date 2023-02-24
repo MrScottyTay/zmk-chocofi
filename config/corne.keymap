@@ -46,6 +46,12 @@
                         #binding-cells = <0>;
                         bindings = <&macro_tap &kp LBKT &kp RBKT &kp LEFT>;
                 };
+                prog_brackets: prog_brackets {
+                        label = "prog_brackets";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&macro_tap &kp LBKT &kp RBKT &kp LEFT>;
+                };
                 quotations: quotations {
                         label = "quotations";
                         compatible = "zmk,behavior-macro";
@@ -65,7 +71,7 @@
                         bindings = <&macro_tap &kp LS(NUBS) &kp LS(NUBS)>;
                 };
                 and: and {
-                        label = "pipes";
+                        label = "and";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings = <&macro_tap &kp LS(N7) &kp LS(N7)>;
@@ -158,7 +164,7 @@
                         label = "td_amps";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&kp AMPS>, <&and>;
+                        bindings = <&kp LS(N7)>, <&and>;
                 };
                 td_dqt: behavior_td_dqt {
                         compatible = "zmk,behavior-tap-dance";
