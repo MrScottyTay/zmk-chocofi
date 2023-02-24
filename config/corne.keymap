@@ -275,10 +275,10 @@
 // | --- |  \  | £$  |  %  | []  | RSE |             |  ;  |  1  |  2  |  3  |  ~  | --- |
 //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|  0  |
 bindings = <
-   &none &gresc        &td_amps        &td_par         &td_brc   &kp C_PP                      &mt PLUS STAR &kp N7 &kp N8 &kp N9 &kp CARET    &none
-   &none &td_excl_pipe &td_dqt         &mt UNDER MINUS &kp EQUAL &kp NUHS                      &td_apos      &kp N4 &kp N5 &kp N6 &kp DQT      &none
-   &none &kp NUBS      &mt DLLR LS(N3) &kp LS(N5)      &td_bkt   &td_raise                     &kp SEMI      &kp N1 &kp N2 &kp N3 &kp LS(NUHS) &none
-                                                       &trans    &tog LOWER &trans /**/ &trans &trans        &kp N0
+   &none &gresc        &td_amps        &td_par         &td_brc    &kp C_PP                      &mt PLUS STAR &kp N7 &kp N8 &kp N9 &kp CARET    &none
+   &none &td_excl_pipe &td_dqt         &mt UNDER MINUS &td_equals &kp NUHS                      &td_apos      &kp N4 &kp N5 &kp N6 &kp DQT      &none
+   &none &kp NUBS      &mt DLLR LS(N3) &kp LS(N5)      &td_bkt    &td_raise                     &kp SEMI      &kp N1 &kp N2 &kp N3 &kp LS(NUHS) &none
+                                                       &trans     &tog LOWER &trans /**/ &trans &trans        &kp N0
                         >;
                 };
 
