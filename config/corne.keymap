@@ -94,7 +94,7 @@
                         compatible = "zmk,behavior-hold-tap";
                         label = "mo_tog";
                         #binding-cells = <2>;
-                        flavor = "hold-preferred";
+                        flavor = "balanced";
                         tapping-term-ms = <LAYER_TAPTERM>;
                         bindings = <&mo>, <&tog>;
                 };
@@ -102,7 +102,7 @@
                         compatible = "zmk,behavior-hold-tap";
                         label = "mo_sl";
                         #binding-cells = <2>;
-                        flavor = "hold-preferred";
+                        flavor = "balanced";
                         tapping-term-ms = <LAYER_TAPTERM>;
                         bindings = <&mo>, <&sl>;
                 };
