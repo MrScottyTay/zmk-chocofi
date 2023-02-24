@@ -103,21 +103,21 @@
                         label = "mo_sl";
                         #binding-cells = <2>;
                         flavor = "hold-preferred";
-                        tapping-term-ms = <LAYER_TAPTERM>;
+                        tapping-term-ms = <175>;
                         bindings = <&mo>, <&sl>;
                 };
                 td_lower: behavior_td_lower {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_lower";
                         #binding-cells = <0>;
-                        tapping-term-ms = <LAYER_TAPTERM>;
+                        tapping-term-ms = <175>;
                         bindings = <MO_SL(LOWER)>, <&tog LOWER>;
                 };
                 td_raise: behavior_td_raise {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_raise";
                         #binding-cells = <0>;
-                        tapping-term-ms = <LAYER_TAPTERM>;
+                        tapping-term-ms = <175>;
                         bindings = <MO_TOG(RAISE)>, <&tog RAISE>;
                 };
                 bksp_del: bksp_del {
@@ -139,21 +139,21 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_lsft";
                         #binding-cells = <0>;
-                        tapping-term-ms = <TD_TAPTERM>;
+                        tapping-term-ms = <175>;
                         bindings = <&skq LSFT>, <&caps_word>;
                 };
                 td_par: behavior_td_par {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_par";
                         #binding-cells = <0>;
-                        tapping-term-ms = <TD_TAPTERM>;
+                        tapping-term-ms = <175>;
                         bindings = <&mt RPAR LPAR>, <&parens>;
                 };
                 td_brc: behavior_td_brc {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_brc";
                         #binding-cells = <0>;
-                        tapping-term-ms = <TD_TAPTERM>;
+                        tapping-term-ms = <175>;
                         bindings = <&mt RBRC LBRC>, <&braces>;
                 };
                 gqt: global_quick_tap {
@@ -170,42 +170,42 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_bkt";
                         #binding-cells = <0>;
-                        tapping-term-ms = <TD_TAPTERM>;
+                        tapping-term-ms = <175>;
                         bindings = <&mt RBKT LBKT>, <&brackets>;
                 };
                 td_excl_pipe: behavior_td_excl_pipe {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_excl_pipe";
                         #binding-cells = <0>;
-                        tapping-term-ms = <TD_TAPTERM>;
+                        tapping-term-ms = <175>;
                         bindings = <&gqt LS(NUBS) EXCL>, <&or>;
                 };
                 td_amps: behavior_td_amps {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_amps";
                         #binding-cells = <0>;
-                        tapping-term-ms = <TD_TAPTERM>;
+                        tapping-term-ms = <175>;
                         bindings = <&kp LS(N7)>, <&and>;
                 };
                 td_dqt: behavior_td_dqt {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_dqt";
                         #binding-cells = <0>;
-                        tapping-term-ms = <TD_TAPTERM>;
+                        tapping-term-ms = <175>;
                         bindings = <&kp AT>, <&quotations>;
                 };
                 td_apos: behavior_td_apos {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_apos";
                         #binding-cells = <0>;
-                        tapping-term-ms = <TD_TAPTERM>;
+                        tapping-term-ms = <175>;
                         bindings = <&kp APOS>, <&apostrophes>;
                 };
                 td_equals: behavior_td_equals {
                         compatible = "zmk,behavior-tap-dance";
                         label = "td_equals";
                         #binding-cells = <0>;
-                        tapping-term-ms = <TD_TAPTERM>;
+                        tapping-term-ms = <175>;
                         bindings = <&kp EQUAL>, <&equals>;
                 };
         };
