@@ -118,7 +118,7 @@
                         label = "td_raise";
                         #binding-cells = <0>;
                         tapping-term-ms = <LAYER_TAPTERM>;
-                        bindings = <MO_TOG(RAISE)>, <&tog RAISE>;
+                        bindings = <MO_SL(RAISE)>, <&tog RAISE>;
                 };
                 bksp_del: bksp_del {
                         compatible = "zmk,behavior-mod-morph";
@@ -238,6 +238,11 @@
                         key-positions = <27 28>;
                         bindings = <&sk LALT>;
                 };
+                combo_lenter {
+                        timeout-ms = <COMBO_TIMEOUT>;
+                        key-positions = <16 17>;
+                        bindings = <&kp ENTER>;
+                };
                 //right side
                 combo_backspace {
                         timeout-ms = <COMBO_TIMEOUT>;
@@ -264,6 +269,11 @@
                         key-positions = <31 32>;
                         bindings = <&sk RALT>;
                 };
+                combo_rtab {
+                        timeout-ms = <COMBO_TIMEOUT>;
+                        key-positions = <18 19>;
+                        bindings = <&kp ENTER>;
+                };
         };
 
         keymap {
@@ -285,7 +295,7 @@
 
                 lower_layer {
 // ---------------------------------------------------------------------------------------
-// | --- |     |  &  | ()  | {}  |PLAY |             | +*  |  7  |  8  |  9  |  ^  | --- |
+// | --- | ESC |  &  | ()  | {}  |PLAY |             | +*  |  7  |  8  |  9  |  ^  | --- |
 // | --- | !|  | ""  | -_  |  =  |  #  |             | ''  |  4  |  5  |  6  |  @  | --- |
 // | --- |  \  | £$  |  %  | []  | RSE |             |  ;  |  1  |  2  |  3  |  ~  | --- |
 //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|  0  |
