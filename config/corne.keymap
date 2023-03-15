@@ -17,8 +17,8 @@
 #define RAISE 2
 // #define MISC 3
 
-#define TD_TAPTERM 175
-#define LAYER_TAPTERM 175
+#define TD_TAPTERM 185
+#define LAYER_TAPTERM 185
 #define COMBO_TIMEOUT 33
 
 #define QUICKTAP_MS 150
