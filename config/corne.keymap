@@ -288,10 +288,10 @@
 // | --- |  Z  |  X  |  C  |  D  |  V  |             |  K  |  H  |  ,  |  .  |  /  | --- |
 //                         | BSP | LWR | SHF | | SPC | RSE | ENT |
                         bindings = <
-   &none  &kp Q &kp W    &kp F  &kp P     &kp B                             &kp J     &kp L     &kp U     &kp Y   &kp SEMI &none // 11
-   &none  &kp A &kp R    &kp S  &kp T     &kp G                             &kp M     &kp N     &kp E     &kp I   &kp O    &none // 23
-   &none  &kp Z &kp X    &kp C  &kp D     &kp V                             &kp K     &kp H     &kp COMMA &kp DOT &kp FSLH &none // 35
-                                &bksp_del &td_lower &td_lsft /**/ &kp SPACE &td_raise &kp ENTER
+   &none  &kp Q &kp W    &kp F  &kp P     &kp B                                &kp J     &kp L     &kp U     &kp Y   &kp SEMI &none // 11
+   &none  &kp A &kp R    &kp S  &kp T     &kp G                                &kp M     &kp N     &kp E     &kp I   &kp O    &none // 23
+   &none  &kp Z &kp X    &kp C  &kp D     &kp V                                &kp K     &kp H     &kp COMMA &kp DOT &kp FSLH &none // 35
+                                &bksp_del MO_SL(LOWER) &td_lsft /**/ &kp SPACE MO_SL(RAISE) &kp ENTER
                         >;
                 };
 
@@ -302,10 +302,10 @@
 // | --- |  \  | £$  |  %  | []  | RSE |             |  ;  |  1  |  2  |  3  |  ~  | --- |
 //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|  0  |
 bindings = <
-   &none &gresc        &td_amps        &td_par          &td_brc    &kp C_PP                      &mt STAR PLUS &kp N7 &kp N8 &kp N9 &kp CARET    &none
-   &none &td_excl_pipe &td_dqt         &mt UNDER MINUS  &td_equals &kp NUHS                      &td_apos      &kp N4 &kp N5 &kp N6 &kp DQT      &none
-   &none &kp NUBS      &mt DLLR LS(N3) &kp LS(N5)       &td_bkt    &td_raise                     &kp SEMI      &kp N1 &kp N2 &kp N3 &kp LS(NUHS) &none
-                                                        &trans     &tog LOWER &trans /**/ &trans &trans        &kp N0
+   &none &gresc        &td_amps        &td_par          &td_brc    &kp C_PP                     &mt STAR PLUS &kp N7 &kp N8 &kp N9 &kp CARET    &none
+   &none &td_excl_pipe &td_dqt         &mt UNDER MINUS  &td_equals &kp NUHS                     &td_apos      &kp N4 &kp N5 &kp N6 &kp DQT      &none
+   &none &kp NUBS      &mt DLLR LS(N3) &kp LS(N5)       &td_bkt    &Sl RAISE                    &kp SEMI      &kp N1 &kp N2 &kp N3 &kp LS(NUHS) &none
+                                                        &trans     &trans    &trans /**/ &trans &trans        &kp N0
                         >;
                 };
 
@@ -316,10 +316,10 @@ bindings = <
 // | --- | F9  | F10 | F11 | F12 |     |             | LWR |WDLFT|     |WDRT |OUTPT| --- |
 //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|-ENT-|
                 bindings = <
-   &none &kp F1 &kp F2  &kp F3  &kp F4  &none                      &kp C_VOL_UP &kp HOME     &kp UP   &kp END       &kp PG_UP    &none
-   &none &kp F5 &kp F6  &kp F7  &kp F8  &none                      &kp C_VOL_DN &kp LEFT     &kp DOWN &kp RIGHT     &kp PG_DN    &none
-   &none &kp F9 &kp F10 &kp F11 &kp F12 &none                      &td_lower    &kp LC(LEFT) &none    &kp LC(RIGHT) &out OUT_TOG &none
-                                &trans  &trans &trans /**/ &trans &tog RAISE   &kp RET
+   &none &kp F1 &kp F2  &kp F3  &kp F4  &none                     &kp C_VOL_UP &kp HOME     &kp UP   &kp END       &kp PG_UP    &none
+   &none &kp F5 &kp F6  &kp F7  &kp F8  &none                     &kp C_VOL_DN &kp LEFT     &kp DOWN &kp RIGHT     &kp PG_DN    &none
+   &none &kp F9 &kp F10 &kp F11 &kp F12 &none                     &sl LOWER    &kp LC(LEFT) &none    &kp LC(RIGHT) &out OUT_TOG &none
+                                &trans  &trans &trans /**/ &trans &trans       &kp RET
                         >;
                 };
 
