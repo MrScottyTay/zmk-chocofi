@@ -221,62 +221,62 @@
                         timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <13 14>;
                         bindings = <&kp TAB>;
+                        layers = <DEFAULT LOWER RAISE>;
                 };
                 combo_gresc {
                         timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <1 2>;
                         bindings = <&gresc>;
+                        layers = <DEFAULT LOWER RAISE>;
                 };
                 combo_lctrl {
                         timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <25 26>;
                         bindings = <&sk LCTRL>;
+                        layers = <DEFAULT LOWER RAISE>;
                 };
                 combo_lgui {
                         timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <26 27>;
                         bindings = <&sk LGUI>;
+                        layers = <DEFAULT LOWER RAISE>;
                 };
                 combo_lalt {
                         timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <27 28>;
                         bindings = <&sk LALT>;
+                        layers = <DEFAULT LOWER RAISE>;
                 };
                 combo_lenter {
                         timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <16 17>;
                         bindings = <&kp ENTER>;
+                        layers = <DEFAULT LOWER RAISE>;
                 };
                 //right side
                 combo_backspace {
                         timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <9 10>;
                         bindings = <&bksp_del>;
-                };
-                combo_enter {
-                        timeout-ms = <COMBO_TIMEOUT_FAST>;
-                        key-positions = <21 22>;
-                        bindings = <&kp ENTER>;
+                        layers = <DEFAULT LOWER RAISE>;
                 };
                 combo_rctrl {
                         timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <33 34>;
                         bindings = <&sk RCTRL>;
+                        layers = <DEFAULT LOWER RAISE>;
                 };
                 combo_rgui {
                         timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <32 33>;
                         bindings = <&sk RGUI>;
-                };
-                combo_ralt {
-                        timeout-ms = <COMBO_TIMEOUT>;
-                        key-positions = <31 32>;
-                        bindings = <&sk RALT>;
+                        layers = <DEFAULT LOWER RAISE>;
                 };
                 combo_rtab {
                         timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <18 19>;
                         bindings = <&kp ENTER>;
+                        layers = <DEFAULT LOWER RAISE>;
                 };
         };
 
