@@ -271,7 +271,7 @@
                         key-positions = <32 33>;
                         bindings = <&sk RGUI>;
                         layers = <DEFAULT LOWER RAISE>;
-                }
+                };
                 combo_rtab {
                         timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <18 19>;
