@@ -271,7 +271,7 @@
                         key-positions = <32 33>;
                         bindings = <&sk RGUI>;
                         layers = <DEFAULT LOWER RAISE>;
-                };
+                }
                 combo_rtab {
                         timeout-ms = <COMBO_TIMEOUT>;
                         key-positions = <18 19>;
@@ -346,10 +346,10 @@ bindings = <
 // | --- |CTRL |  Z  |  X  |  C  |  V  |             |  K  |  H  |  ,  |  .  |  /  | --- |
 //                         | TAB | NUM | SHF | | SPC | RSE | ENT |
                         bindings = <
-   &none  &kp ESC   &kp Q    &kp W   &kp E           &kp R                                 &kp T     &kp Y     &kp U     &kp I   &kp O &none // 11
-   &none  &kp LSHFT &kp A    &kp S   &kp D           &kp F                                 &kp G     &kp H     &kp J     &kp K   &kp L    &none // 23
-   &none  &kp LCTRL &kp Z    &kp X   &kp C           &kp V                                 &kp B     &kp N     &kp M     &kp P   &kp DOT &none // 35
-                             &kp TAB &mo GAMINGNUMS &kp SPACE /**/ &kp SPACE MO_SL(RAISE) &kp ENTER
+   &none  &kp ESC   &kp Q    &kp W   &kp E              &kp R                            &kp T       &kp Y     &kp U     &kp I   &kp O   &none // 11
+   &none  &kp LSHFT &kp A    &kp S   &kp D              &kp F                            &kp G       &kp H     &kp J     &kp K   &kp L   &none // 23
+   &none  &kp LCTRL &kp Z    &kp X   &kp C              &kp V                            &kp B       &kp N     &kp M     &kp P   &kp DOT &none // 35
+                                     &kp TAB MO_SL(GAMINGNUMS) &kp SPACE /**/ &kp SPACE MO_SL(RAISE) &kp ENTER
                         >;
                 };
                 
@@ -360,10 +360,10 @@ bindings = <
 // | --- |  Z  |  X  |  C  |  D  |  V  |             |  K  |  H  |  ,  |  .  |  /  | --- |
 //                         | BSP | LWR | SHF | | SPC | RSE | ENT |
                         bindings = <
-   &none  &kp 1 &kp 2 &kp 3     &kp 4     &kp C_VOL_UP                          &kp T     &kp Y     &kp U     &kp I   &kp O &none // 11
-   &none  &kp 5 &kp 6 &kp 7     &kp 8     &kp C_VOL_DN                          &kp G     &kp H     &kp J     &kp K   &kp L &none // 23
-   &none  &kp 9 &kp 0 &kp MINUS &kp EQUAL &to DEFAULT                           &kp B     &kp N     &kp M     &kp P   &kp DOT &none // 35
-                                &trans    &trans    &trans /**/ &kp SPACE MO_SL(RAISE) &kp ENTER
+   &none  &kp N1 &kp N2 &kp N3    &kp N4    &kp C_VOL_UP                          &kp T     &kp Y     &kp U     &kp I   &kp O &none // 11
+   &none  &kp N5 &kp N6 &kp N7    &kp N8    &kp C_VOL_DN                          &kp G     &kp H     &kp J     &kp K   &kp L &none // 23
+   &none  &kp N9 &kp N0 &kp MINUS &kp EQUAL &to DEFAULT                           &kp B     &kp N     &kp M     &kp P   &kp DOT &none // 35
+                                  &trans    &trans    &trans /**/ &kp SPACE MO_SL(RAISE) &kp ENTER
                         >;
                 };
 
