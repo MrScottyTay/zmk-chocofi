@@ -15,6 +15,8 @@
 #define DEFAULT 0
 #define LOWER 1
 #define RAISE 2
+#define GAMING 3
+#define GAMINGNUMS 4
 // #define MISC 3
 
 #define TD_TAPTERM 200
@@ -282,7 +284,7 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-// ---------------------------------------------------------------------------------------
+// -----------------------------------------------------------------qa----------------------
 // | --- |  Q  |  W  |  F  |  P  |  B  |             |  J  |  L  |  U  |  Y  |  ;  | --- |
 // | --- |  A  |  R  |  S  |  T  |  G  |             |  M  |  N  |  E  |  I  |  O  | --- |
 // | --- |  Z  |  X  |  C  |  D  |  V  |             |  K  |  H  |  ,  |  .  |  /  | --- |
@@ -302,7 +304,7 @@
 // | --- |  \  | £$  |  %  | []  | RSE |             |  ;  |  1  |  2  |  3  |  ~  | --- |
 //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|  0  |
 bindings = <
-   &none &gresc        &td_amps        &td_par          &td_brc    &kp C_PP                     &mt STAR PLUS &kp N7 &kp N8 &kp N9 &kp CARET    &none
+   &none &td GRAVE     &td_amps        &td_par          &td_brc    &kp C_PP                     &mt STAR PLUS &kp N7 &kp N8 &kp N9 &kp CARET    &none
    &none &td_excl_pipe &td_dqt         &mt UNDER MINUS  &td_equals &kp NUHS                     &td_apos      &kp N4 &kp N5 &kp N6 &kp DQT      &none
    &none &kp NUBS      &mt DLLR LS(N3) &kp LS(N5)       &td_bkt    &sl RAISE                    &kp SEMI      &kp N1 &kp N2 &kp N3 &kp LS(NUHS) &none
                                                         &trans     &trans    &trans /**/ &trans &trans        &kp N0
@@ -316,7 +318,7 @@ bindings = <
 // | --- | F9  | F10 | F11 | F12 |     |             | LWR |WDLFT|     |WDRT |OUTPT| --- |
 //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|-ENT-|
                 bindings = <
-   &none &kp F1 &kp F2  &kp F3  &kp F4  &none                     &kp C_VOL_UP &kp HOME     &kp UP   &kp END       &kp PG_UP    &none
+   &none &kp F1 &kp F2  &kp F3  &kp F4  &to GAMING                &kp C_VOL_UP &kp HOME     &kp UP   &kp END       &kp PG_UP    &none
    &none &kp F5 &kp F6  &kp F7  &kp F8  &none                     &kp C_VOL_DN &kp LEFT     &kp DOWN &kp RIGHT     &kp PG_DN    &none
    &none &kp F9 &kp F10 &kp F11 &kp F12 &none                     &sl LOWER    &kp LC(LEFT) &none    &kp LC(RIGHT) &out OUT_TOG &none
                                 &trans  &trans &trans /**/ &trans &trans       &kp RET
@@ -336,6 +338,34 @@ bindings = <
 //                                                 &none        &none        &none /**/ &none &none        &none
 //                         >;
 //                 };
+
+                gaming_layer {
+// -----------------------------------------------------------------qa----------------------
+// | --- | ESC |  Q  |  W  |  E  |  R  |             |  J  |  L  |  U  |  Y  |  ;  | --- |
+// | --- |SHIFT|  A  |  S  |  D  |  F  |             |  M  |  N  |  E  |  I  |  O  | --- |
+// | --- |CTRL |  Z  |  X  |  C  |  V  |             |  K  |  H  |  ,  |  .  |  /  | --- |
+//                         | TAB | NUM | SHF | | SPC | RSE | ENT |
+                        bindings = <
+   &none  &kp ESC   &kp Q    &kp W   &kp E           &kp R                                 &kp T     &kp Y     &kp U     &kp I   &kp O &none // 11
+   &none  &kp LSHFT &kp A    &kp S   &kp D           &kp F                                 &kp G     &kp H     &kp J     &kp K   &kp L    &none // 23
+   &none  &kp LCTRL &kp Z    &kp X   &kp C           &kp V                                 &kp B     &kp N     &kp M     &kp P   &kp . &none // 35
+                             &KP TAB &mo(GAMINGNUMS) &kp SPACE /**/ &kp SPACE MO_SL(RAISE) &kp ENTER
+                        >;
+                };
+                
+                gaming_num_layer {
+// -----------------------------------------------------------------qa----------------------
+// | --- |  Q  |  W  |  F  |  P  |  B  |             |  J  |  L  |  U  |  Y  |  ;  | --- |
+// | --- |  A  |  R  |  S  |  T  |  G  |             |  M  |  N  |  E  |  I  |  O  | --- |
+// | --- |  Z  |  X  |  C  |  D  |  V  |             |  K  |  H  |  ,  |  .  |  /  | --- |
+//                         | BSP | LWR | SHF | | SPC | RSE | ENT |
+                        bindings = <
+   &none  &kp 1 &kp 2 &kp 3     &kp 4     &kp C_VOL_UP                          &kp T     &kp Y     &kp U     &kp I   &kp O &none // 11
+   &none  &kp 5 &kp 6 &kp 7     &kp 8     &kp C_VOL_DN                          &kp G     &kp H     &kp J     &kp K   &kp L &none // 23
+   &none  &kp 9 &kp 0 &kp MINUS &kp EQUAL &to DEFAULT                           &kp B     &kp N     &kp M     &kp P   &kp . &none // 35
+                                &trans    &trans    &trans /**/ &kp SPACE MO_SL(RAISE) &kp ENTER
+                        >;
+                };
 
         };
 };
