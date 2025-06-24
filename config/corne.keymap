@@ -305,11 +305,11 @@ XX  &kp Z  &kp X  &kp C  &kp D  &kp V    /**/  &kp K  &kp H  &kp COMMA &kp DOT &
 // | --- | !|  | ""  | -_  |  =  |  #  |             | ''  |  4  |  5  |  6  |  @  | --- |
 // | --- |  \  | £$  |  %  | []  | RSE |             |  ;  |  1  |  2  |  3  |  ~  | --- |
 //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|  0  |
-bindings = <
+                        bindings = <
 XX  &kp GRAVE     &td_amps        &td_par         &td_brc    &kp C_PP   /**/  &mt STAR PLUS &kp N7 &kp N8 &kp N9 &kp CARET     XX
 XX  &td_excl_pipe &td_dqt         &mt UNDER MINUS &td_equals &kp NUHS   /**/  &td_apos      &kp N4 &kp N5 &kp N6 &kp DQT       XX
 XX  &kp NUBS      &mt DLLR LS(N3) &kp LS(N5)      &td_bkt    &sl RAISE  /**/  &kp SEMI      &kp N1 &kp N2 &kp N3 &kp LS(NUHS)  XX
-                                         /*TH*/ &trans  &trans  LG(SPC) /**/ &trans  &trans  &kp N0 /*TH/*
+                                         /*TH*/ &trans  &trans  LG(SPC) /**/ &trans  &trans  &kp N0 /*TH*/
                         >;
                 };
 
@@ -319,7 +319,7 @@ XX  &kp NUBS      &mt DLLR LS(N3) &kp LS(N5)      &td_bkt    &sl RAISE  /**/  &k
 // | --- | F5  | F6  | F7  | F8  |CAD  |             |VOL- |LEFT |DOWN |RIGHT|PGDN | --- |
 // | --- | F9  | F10 | F11 | F12 |     |             | LWR |WDLFT|     |WDRT |OUTPT| --- |
 //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|-ENT-|
-                bindings = <
+                        bindings = <
 XX &kp F1 &kp F2  &kp F3  &kp F4  &to GAMING       /**/  &kp C_VOL_UP &kp HOME     &kp UP   &kp END       &kp PG_UP    XX
 XX &kp F5 &kp F6  &kp F7  &kp F8  &kp LC(LA(DEL))  /**/  &kp C_VOL_DN &kp LEFT     &kp DOWN &kp RIGHT     &kp PG_DN    XX
 XX &kp F9 &kp F10 &kp F11 &kp F12 &none            /**/  &sl LOWER    &kp LC(LEFT) &none    &kp LC(RIGHT) &out OUT_TOG XX
@@ -351,7 +351,7 @@ XX &kp F9 &kp F10 &kp F11 &kp F12 &none            /**/  &sl LOWER    &kp LC(LEF
 XX  &kp ESC   &kp Q  &kp W  &kp E  &kp R     /**/  &kp T  &kp Y  &kp U  &kp I  &kp O    XX // 11
 XX  &kp LSHFT &kp A  &kp S  &kp D  &kp F     /**/  &kp G  &kp H  &kp J  &kp K  &kp L    XX // 23
 XX  &kp LCTRL &kp Z  &kp X  &kp C  &kp V     /**/  &kp B  &kp N  &kp M  &kp P  &kp DOT  XX // 35
-/*TH*/ &kp TAB  MO_SL(GAMINGNUMS)  &kp SPACE /**/ &kp SPACE MO_SL(RAISE) &kp ENTER /* TH */
+/*TH*/ &kp TAB  MO_SL(GAMINGNUMS)  &kp SPACE /**/ &kp SPACE MO_SL(RAISE) &kp ENTER /*TH*/
                         >;
                 };
                 
