@@ -27,7 +27,7 @@
 #define QUICKTAP_MS 125
 #define QUICKTAP_TERM 175
 
-#define NA &none
+#define XX &none
 
 / {
         // conditional_layers {
@@ -292,10 +292,10 @@
 // | --- |  Z  |  X  |  C  |  D  |  V  |             |  K  |  H  |  ,  |  .  |  /  | --- |
 //                         | BSP | LWR | SHF | | SPC | RSE | ENT |
                         bindings = <
-   NA  &kp Q &kp W    &kp F  &kp P     &kp B                                &kp J     &kp L     &kp U     &kp Y   &kp SEMI &none // 11
-   &none  &kp A &kp R    &kp S  &kp T     &kp G                                &kp M     &kp N     &kp E     &kp I   &kp O    &none // 23
-   &none  &kp Z &kp X    &kp C  &kp D     &kp V                                &kp K     &kp H     &kp COMMA &kp DOT &kp FSLH &none // 35
-                                &bksp_del MO_SL(LOWER) &td_lsft /**/ &kp SPACE MO_SL(RAISE) &kp ENTER
+XX  &kp Q  &kp W  &kp F  &kp P  &kp B    /**/  &kp J  &kp L  &kp U     &kp Y   &kp SEMI  XX // 11
+XX  &kp A  &kp R  &kp S  &kp T  &kp G    /**/  &kp M  &kp N  &kp E     &kp I   &kp O     XX // 23
+XX  &kp Z  &kp X  &kp C  &kp D  &kp V    /**/  &kp K  &kp H  &kp COMMA &kp DOT &kp FSLH  XX // 35
+/*TH*/ &bksp_del  MO_SL(LOWER)  &td_lsft /**/ &kp SPACE  MO_SL(RAISE)  &kp ENTER /*TH*/
                         >;
                 };
 
@@ -306,10 +306,10 @@
 // | --- |  \  | £$  |  %  | []  | RSE |             |  ;  |  1  |  2  |  3  |  ~  | --- |
 //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|  0  |
 bindings = <
-   &none &kp GRAVE     &td_amps        &td_par          &td_brc    &kp C_PP                     &mt STAR PLUS &kp N7 &kp N8 &kp N9 &kp CARET    &none
-   &none &td_excl_pipe &td_dqt         &mt UNDER MINUS  &td_equals &kp NUHS                     &td_apos      &kp N4 &kp N5 &kp N6 &kp DQT      &none
-   &none &kp NUBS      &mt DLLR LS(N3) &kp LS(N5)       &td_bkt    &sl RAISE                    &kp SEMI      &kp N1 &kp N2 &kp N3 &kp LS(NUHS) &none
-                                                        &trans     &trans    &trans /**/ &trans &trans        &kp N0
+XX  &kp GRAVE     &td_amps        &td_par         &td_brc    &kp C_PP   /**/  &mt STAR PLUS &kp N7 &kp N8 &kp N9 &kp CARET     XX
+XX  &td_excl_pipe &td_dqt         &mt UNDER MINUS &td_equals &kp NUHS   /**/  &td_apos      &kp N4 &kp N5 &kp N6 &kp DQT       XX
+XX  &kp NUBS      &mt DLLR LS(N3) &kp LS(N5)      &td_bkt    &sl RAISE  /**/  &kp SEMI      &kp N1 &kp N2 &kp N3 &kp LS(NUHS)  XX
+                                         /*TH*/ &trans  &trans  LG(SPC) /**/ &trans  &trans  &kp N0 /*TH/*
                         >;
                 };
 
@@ -320,10 +320,10 @@ bindings = <
 // | --- | F9  | F10 | F11 | F12 |     |             | LWR |WDLFT|     |WDRT |OUTPT| --- |
 //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|-ENT-|
                 bindings = <
-   &none &kp F1 &kp F2  &kp F3  &kp F4  &to GAMING                &kp C_VOL_UP &kp HOME     &kp UP   &kp END       &kp PG_UP    &none
-   &none &kp F5 &kp F6  &kp F7  &kp F8  &kp LC(LA(DEL))           &kp C_VOL_DN &kp LEFT     &kp DOWN &kp RIGHT     &kp PG_DN    &none
-   &none &kp F9 &kp F10 &kp F11 &kp F12 &none                     &sl LOWER    &kp LC(LEFT) &none    &kp LC(RIGHT) &out OUT_TOG &none
-                                &trans  &trans &trans /**/ &trans &trans       &kp RET
+XX &kp F1 &kp F2  &kp F3  &kp F4  &to GAMING       /**/  &kp C_VOL_UP &kp HOME     &kp UP   &kp END       &kp PG_UP    XX
+XX &kp F5 &kp F6  &kp F7  &kp F8  &kp LC(LA(DEL))  /**/  &kp C_VOL_DN &kp LEFT     &kp DOWN &kp RIGHT     &kp PG_DN    XX
+XX &kp F9 &kp F10 &kp F11 &kp F12 &none            /**/  &sl LOWER    &kp LC(LEFT) &none    &kp LC(RIGHT) &out OUT_TOG XX
+                     /*TH*/ &trans  &trans  &trans /**/ LG(SPC)  &trans  &kp RET /*TH*/
                         >;
                 };
 
@@ -334,10 +334,10 @@ bindings = <
 // // | --- |     |     |     |     |     |             |     |     |     |     |     | --- |
 // //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|-ENT-|
 //                         bindings = <
-//    &none &none        &none        &none        &none        &none                         &kp C_BRI_UP &none &none &none &none &none
-//    &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                  &kp C_BRI_DN &none &none &none &none &none
-//    &none &bt BT_CLR   &none        &none        &none        &none                         &none        &none &none &none &none &none
-//                                                 &none        &none        &none /**/ &none &none        &none
+// XX  &none        &none        &none        &none        &none         /**/  &kp C_BRI_UP &none  &none  &none  &none XX
+// XX  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  /**/  &kp C_BRI_DN &none  &none  &none  &none XX
+// XX  &bt BT_CLR   &none        &none        &none        &none         /**/  &none        &none  &none  &none  &none XX
+//                                                   &none  &none  &none /**/ &none  &none  &none
 //                         >;
 //                 };
 
@@ -348,10 +348,10 @@ bindings = <
 // | --- |CTRL |  Z  |  X  |  C  |  V  |             |  K  |  H  |  ,  |  .  |  /  | --- |
 //                         | TAB | NUM | SHF | | SPC | RSE | ENT |
                         bindings = <
-   &none  &kp ESC   &kp Q    &kp W   &kp E              &kp R                            &kp T       &kp Y     &kp U     &kp I   &kp O   &none // 11
-   &none  &kp LSHFT &kp A    &kp S   &kp D              &kp F                            &kp G       &kp H     &kp J     &kp K   &kp L   &none // 23
-   &none  &kp LCTRL &kp Z    &kp X   &kp C              &kp V                            &kp B       &kp N     &kp M     &kp P   &kp DOT &none // 35
-                                     &kp TAB MO_SL(GAMINGNUMS) &kp SPACE /**/ &kp SPACE MO_SL(RAISE) &kp ENTER
+XX  &kp ESC   &kp Q  &kp W  &kp E  &kp R     /**/  &kp T  &kp Y  &kp U  &kp I  &kp O    XX // 11
+XX  &kp LSHFT &kp A  &kp S  &kp D  &kp F     /**/  &kp G  &kp H  &kp J  &kp K  &kp L    XX // 23
+XX  &kp LCTRL &kp Z  &kp X  &kp C  &kp V     /**/  &kp B  &kp N  &kp M  &kp P  &kp DOT  XX // 35
+/*TH*/ &kp TAB  MO_SL(GAMINGNUMS)  &kp SPACE /**/ &kp SPACE MO_SL(RAISE) &kp ENTER /* TH */
                         >;
                 };
                 
@@ -362,10 +362,10 @@ bindings = <
 // | --- |  Z  |  X  |  C  |  D  |  V  |             |  K  |  H  |  ,  |  .  |  /  | --- |
 //                         | BSP | LWR | SHF | | SPC | RSE | ENT |
                         bindings = <
-   &none  &kp N1 &kp N2 &kp N3    &kp N4    &kp C_VOL_UP                          &kp T     &kp Y     &kp U     &kp I   &kp O &none // 11
-   &none  &kp N5 &kp N6 &kp N7    &kp N8    &kp C_VOL_DN                          &kp G     &kp H     &kp J     &kp K   &kp L &none // 23
-   &none  &kp N9 &kp N0 &kp MINUS &kp EQUAL &to DEFAULT                           &kp B     &kp N     &kp M     &kp P   &kp DOT &none // 35
-                                  &trans    &trans    &trans /**/ &kp SPACE MO_SL(RAISE) &kp ENTER
+XX  &kp N1  &kp N2  &kp N3    &kp N4    &kp C_VOL_UP  /**/  &kp T  &kp Y  &kp U  &kp I  &kp O   XX // 11
+XX  &kp N5  &kp N6  &kp N7    &kp N8    &kp C_VOL_DN  /**/  &kp G  &kp H  &kp J  &kp K  &kp L   XX // 23
+XX  &kp N9  &kp N0  &kp MINUS &kp EQUAL &to DEFAULT   /**/  &kp B  &kp N  &kp M  &kp P  &kp DOT XX // 35
+                        /*TH*/ &trans  &trans  &trans /**/ &kp SPACE  MO_SL(RAISE)  &kp ENTER /**/
                         >;
                 };
 
