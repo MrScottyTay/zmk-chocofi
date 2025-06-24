@@ -19,13 +19,15 @@
 #define GAMINGNUMS 4
 // #define MISC 3
 
-#define TD_TAPTERM 200
+#define TD_TAPTERM 150
 #define LAYER_TAPTERM 175
-#define COMBO_TIMEOUT 33
+#define COMBO_TIMEOUT 22
 #define COMBO_TIMEOUT_FAST 29 
 
-#define QUICKTAP_MS 150
+#define QUICKTAP_MS 125
 #define QUICKTAP_TERM 175
+
+#define NA &none
 
 / {
         // conditional_layers {
@@ -290,7 +292,7 @@
 // | --- |  Z  |  X  |  C  |  D  |  V  |             |  K  |  H  |  ,  |  .  |  /  | --- |
 //                         | BSP | LWR | SHF | | SPC | RSE | ENT |
                         bindings = <
-   &none  &kp Q &kp W    &kp F  &kp P     &kp B                                &kp J     &kp L     &kp U     &kp Y   &kp SEMI &none // 11
+   NA  &kp Q &kp W    &kp F  &kp P     &kp B                                &kp J     &kp L     &kp U     &kp Y   &kp SEMI &none // 11
    &none  &kp A &kp R    &kp S  &kp T     &kp G                                &kp M     &kp N     &kp E     &kp I   &kp O    &none // 23
    &none  &kp Z &kp X    &kp C  &kp D     &kp V                                &kp K     &kp H     &kp COMMA &kp DOT &kp FSLH &none // 35
                                 &bksp_del MO_SL(LOWER) &td_lsft /**/ &kp SPACE MO_SL(RAISE) &kp ENTER
@@ -313,13 +315,13 @@ bindings = <
 
                 raise_layer {
 // ---------------------------------------------------------------------------------------
-// | --- | F1  | F2  | F3  | F4  |PLAY |             |VOL+ |HOME | UP  | END |PGUP | --- |
-// | --- | F5  | F6  | F7  | F8  |     |             |VOL- |LEFT |DOWN |RIGHT|PGDN | --- |
+// | --- | F1  | F2  | F3  | F4  |GAME |             |VOL+ |HOME | UP  | END |PGUP | --- |
+// | --- | F5  | F6  | F7  | F8  |CAD  |             |VOL- |LEFT |DOWN |RIGHT|PGDN | --- |
 // | --- | F9  | F10 | F11 | F12 |     |             | LWR |WDLFT|     |WDRT |OUTPT| --- |
 //                         |-BSP-|-LWR-|-SHF-| |-SPC-|-RSE-|-ENT-|
                 bindings = <
    &none &kp F1 &kp F2  &kp F3  &kp F4  &to GAMING                &kp C_VOL_UP &kp HOME     &kp UP   &kp END       &kp PG_UP    &none
-   &none &kp F5 &kp F6  &kp F7  &kp F8  &none                     &kp C_VOL_DN &kp LEFT     &kp DOWN &kp RIGHT     &kp PG_DN    &none
+   &none &kp F5 &kp F6  &kp F7  &kp F8  &kp LC(LA(DEL))           &kp C_VOL_DN &kp LEFT     &kp DOWN &kp RIGHT     &kp PG_DN    &none
    &none &kp F9 &kp F10 &kp F11 &kp F12 &none                     &sl LOWER    &kp LC(LEFT) &none    &kp LC(RIGHT) &out OUT_TOG &none
                                 &trans  &trans &trans /**/ &trans &trans       &kp RET
                         >;
