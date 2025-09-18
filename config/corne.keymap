@@ -26,8 +26,8 @@ XX| 25 | 26 | 27 | 28 | 29 |          | 30 | 31 | 32 | 33 | 34 |XX
 
 #define TD_TAPTERM 175
 #define LAYER_TAPTERM 175
-#define COMBO_TIMEOUT 30
-#define COMBO_TIMEOUT_FAST 25
+#define COMBO_TIMEOUT 35
+#define COMBO_TIMEOUT_FAST 30
 
 #define QUICKTAP_MS 125
 #define QUICKTAP_TERM 175
@@ -227,49 +227,42 @@ XX| 25 | 26 | 27 | 28 | 29 |          | 30 | 31 | 32 | 33 | 34 |XX
                 // left side
                 combo_tab {
                         timeout-ms = <COMBO_TIMEOUT_FAST>;
-                        must-hold = <true>;
                         key-positions = <13 14>;
                         bindings = <&kp TAB>;
                         layers = <DFLT RSE>;
                 };
                 combo_ctab {
                         timeout-ms = <COMBO_TIMEOUT>;
-                        must-hold = <true>;
                         key-positions = <13 14>;
                         bindings = <&kp LC(TAB)>;
                         layers = <LWR>;
                 };
                 combo_gresc {
                         timeout-ms = <COMBO_TIMEOUT>;
-                        must-hold = <true>;
                         key-positions = <1 2>;
                         bindings = <&gresc>;
                         layers = <DFLT LWR RSE>;
                 };
                 combo_lctrl {
                         timeout-ms = <COMBO_TIMEOUT>;
-                        must-hold = <true>;
                         key-positions = <25 26>;
                         bindings = <&sk LCTRL>;
                         layers = <DFLT LWR RSE>;
                 };
                 combo_lgui {
                         timeout-ms = <COMBO_TIMEOUT_FAST>;
-                        must-hold = <true>;
                         key-positions = <26 27>;
                         bindings = <&sk LGUI>;
                         layers = <DFLT LWR RSE>;
                 };
                 combo_lalt {
                         timeout-ms = <COMBO_TIMEOUT>;
-                        must-hold = <true>;
                         key-positions = <27 28>;
                         bindings = <&sk LALT>;
                         layers = <DFLT LWR RSE>;
                 };
                 combo_lenter {
                         timeout-ms = <COMBO_TIMEOUT_FAST>;
-                        must-hold = <true>;
                         key-positions = <16 17>;
                         bindings = <&kp ENTER>;
                         layers = <DFLT LWR RSE>;
@@ -277,42 +270,36 @@ XX| 25 | 26 | 27 | 28 | 29 |          | 30 | 31 | 32 | 33 | 34 |XX
                 //right side
                 combo_backspace {
                         timeout-ms = <COMBO_TIMEOUT_FAST>;
-                        must-hold = <true>;
                         key-positions = <9 10>;
                         bindings = <&bksp_del>;
                         layers = <DFLT LWR RSE>;
                 };
                 combo_rctrl {
                         timeout-ms = <COMBO_TIMEOUT>;
-                        must-hold = <true>;
                         key-positions = <33 34>;
                         bindings = <&sk RCTRL>;
                         layers = <DFLT LWR RSE>;
                 };
                 combo_rgui {
                         timeout-ms = <COMBO_TIMEOUT_FAST>;
-                        must-hold = <true>;
                         key-positions = <32 33>;
                         bindings = <&sk RGUI>;
                         layers = <DFLT LWR RSE>;
                 };
                 combo_ralt {
                         timeout-ms = <COMBO_TIMEOUT>;
-                        must-hold = <true>;
                         key-positions = <31 32>;
                         bindings = <&sk LALT>;
                         layers = <DFLT LWR RSE>;
                 };
                 combo_rtab {
                         timeout-ms = <COMBO_TIMEOUT>;
-                        must-hold = <true>;
                         key-positions = <18 19>;
                         bindings = <&kp ENTER>;
                         layers = <DFLT RSE>;
                 };
                 combo_rctab {
                         timeout-ms = <COMBO_TIMEOUT_FAST>;
-                        must-hold = <true>;
                         key-positions = <18 19>;
                         bindings = <&kp LC(TAB)>;
                         layers = <LWR>;
